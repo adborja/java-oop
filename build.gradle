@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+    dependencies {
+        classpath 'org.openjfx:javafx-plugin:0.0.8'
+    }
+}
+
+plugins {
+    id "org.openjfx.javafxplugin" version "0.0.8"
+    id 'java'
+    id "application"
+}
+
+apply plugin: "java"
+apply plugin: "org.openjfx.javafxplugin"
+
+group 'com.edu.cedesistemas'
+version '1.0-SNAPSHOT'
+sourceCompatibility = '1.11'
+
+repositories {
+    mavenCentral()
+}
+
+ext {
+    javaMainClass = "com.edu.cedesistemas.oop.Main"
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+application {
+    mainClassName = javaMainClass
+}
+
+javafx {
+    version = '11'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}
