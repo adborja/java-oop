@@ -5,7 +5,7 @@ public class Ellipse implements Shape {
     private double a;
     private double b;
 
-    public void Ellipse(double a, double b) {
+    public Ellipse(double a, double b) {
         this.a = a;
         this.b = b;
     }
