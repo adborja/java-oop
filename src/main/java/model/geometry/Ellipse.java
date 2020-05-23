@@ -19,12 +19,12 @@ public class Ellipse implements Shape {
 
     @Override
     public double area() {
-        return 0;
+        return Math.PI * a * this.b;
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return 2 * Math.PI * Math.sqrt((Math.pow(a, 2) + Math.pow(this.b, 2)) / 2);
     }
 
 }
