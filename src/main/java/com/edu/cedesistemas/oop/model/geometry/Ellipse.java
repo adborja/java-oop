@@ -8,6 +8,7 @@ public class Ellipse implements Shape{
         a=z;
         this.b=b;
     }
+
     public double getA(){
         return a;
     }
