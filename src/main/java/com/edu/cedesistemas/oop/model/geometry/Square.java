@@ -2,7 +2,12 @@ package com.edu.cedesistemas.oop.model.geometry;
 
 public class Square extends Rectangle {
 
-    public Square(Point a, double b, double c) {
-        super(a, b, c);
+    public Square(double b) {
+        super(b, b);
+    }
+
+    @Override
+    public Point getBl() {
+        return super.getBl();
     }
 }
