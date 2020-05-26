@@ -11,6 +11,7 @@ public class Rectangle implements Shape {
     private double height;
     private double width;
 
+<<<<<<< HEAD
     /*public Rectangle(Point obj, double height, double width) {
         this.bl = obj;
         this.height = height;
@@ -23,6 +24,13 @@ public class Rectangle implements Shape {
         this.height = height;
         this.width = width;
             }
+=======
+    public Rectangle (Point obj, double height, double width) {
+        this.bl = obj;
+        this.height = height;
+        this.width = width;
+    }
+>>>>>>> origin/feature/dhoyos-javaopp
 
     public Point BottomLeft() {
         return bl;
