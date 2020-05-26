@@ -1,6 +1,5 @@
 package com.edu.cedesistemas.opp.model.geometry;
 
-<<<<<<< HEAD
 import java.awt.*;
 
 public class Triangle implements Shape {
@@ -63,8 +62,3 @@ public class Triangle implements Shape {
     }
 
 }
-
-=======
-public class Triangle {
-}
->>>>>>> origin/feature/dhoyos-javaopp
