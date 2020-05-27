@@ -1,6 +1,6 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Circle extends Ellipse {
+public class Circle extends Ellipse implements Scalable, ComparableShape {
     public Circle(double radius) {
         super(radius, radius);
     }
@@ -12,5 +12,10 @@ public class Circle extends Ellipse {
 
     public double getRadius() {
         return a;
+    }
+
+    @Override
+    public Shape scale(double percentage) {
+        return new Circle(getRadius() * percentage / 100);
     }
 }
