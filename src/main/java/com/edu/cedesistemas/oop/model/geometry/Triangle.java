@@ -1,7 +1,6 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
 import javax.swing.text.Segment;
-import java.awt.*;
 
 public class Triangle implements Shape{
 
@@ -41,8 +40,8 @@ public class Triangle implements Shape{
 
     }
 
-    /*private removeSide(Segment[] segments, Segment segment){
-        return
+/*    private removeSide(Segment[] segments, Segment segment){
+        return ;
     }*/
 
     private boolean isIsosceles(Triangle t1){
