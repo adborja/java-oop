@@ -4,6 +4,7 @@ public class Ellipse implements Shape {
     private double a;
     private double b;
 
+    //constructor
     public Ellipse(double z, double b) {
         a = z;
         this.b = b;
@@ -14,6 +15,7 @@ public class Ellipse implements Shape {
     }
 
     public double getB() {
+
         return this.b;
     }
 
