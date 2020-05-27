@@ -22,7 +22,7 @@ public class Triangle implements Shape {
         return type;
     }
     public double angle(Segment S1){
-        return 0;
+        return 1;
     }
     private void determineType(){
 
