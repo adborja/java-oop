@@ -1,21 +1,21 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Circle extends Ellipse {
-
-// Me pide que cree constructor porque el padre tiene uno con argumentos
-    public Circle(double radio) {
-        //Tengo dos argumentos porque el padre Elipse tiene 2
-        super(radio, radio);
+public class Circle extends Ellipse implements Scalable, ComparableShape {
+    public Circle(double radius) {
+        super(radius, radius);
     }
 
-    //Creo los metodos propios del circulo
+    @Override
+    public double perimeter() {
+        return 2 * Math.PI * a;
+    }
 
     public double getRadius() {
-        return getA();
+        return a;
     }
 
-    public double perimeter() {
-        return 2 * Math.PI * getA();
+    @Override
+    public Shape scale(double percentage) {
+        return new Circle(getRadius() * percentage / 100);
     }
-
 }

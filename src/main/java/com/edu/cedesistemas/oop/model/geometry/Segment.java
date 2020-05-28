@@ -1,15 +1,16 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-import java.awt.*;
+import java.util.Objects;
 
 public class Segment implements Shape {
-    private Point p1;
-    private Point p2;
-    private String name;
+    private final Point p1;
+    private final Point p2;
+    private final String name;
 
-    public Segment(Point p1, Point p2){
+    public Segment(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
+        this.name = p1.toString() + "_" + p2.toString();
     }
 
     public Point getP1() {
@@ -25,21 +26,38 @@ public class Segment implements Shape {
     }
 
     public double getValue() {
-        return 0;
+        return Math.abs(Point.distance(p1, p2));
     }
 
-    public double slope(){
-        return 0;
+    public double slope() {
+        return (p2.getY() - p1.getY()) / (p2.getX() - p1.getX());
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Segment segment = (Segment) o;
+        return Double.compare(segment.getValue(), getValue()) == 0;
+    }
 
-        @Override
+    @Override
+    public int hashCode() {
+        return Objects.hash(getValue());
+    }
+
+    @Override
+    public String toString() {
+        return getName();
+    }
+
+    @Override
     public double area() {
         return 0;
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return getValue();
     }
 }
