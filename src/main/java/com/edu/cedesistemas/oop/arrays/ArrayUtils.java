@@ -9,7 +9,12 @@ public final class ArrayUtils {
     // Lesson 2 - - arrays
     public static void bubbleSort(Integer[] array) {
         // Implemente codigo
-
+        boolean swapped = true;
+        int j = 0;
+        int tmp = 0;
+        while (swapped = true){
+            
+        }
     }
 
     // Lesson 2 -- ArrayList
