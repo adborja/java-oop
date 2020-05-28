@@ -9,6 +9,7 @@ public final class ArrayUtils {
     // Lesson 2 - - arrays
     public static void bubbleSort(Integer[] array) {
         // Implemente codigo
+
     }
 
     // Lesson 2 -- ArrayList
@@ -20,7 +21,24 @@ public final class ArrayUtils {
     // Lesson 2 -- ArrayList
     public static List<Integer> getPrimeNumbers(int limit) {
         // Implemente codigo
-        return null;
+        ArrayList<Integer> listaresultado = new ArrayList<>();
+
+        int i = 0;
+        int num = 0;
+        int counter = 0;
+        for (i = 1 ; i <= limit ; i++) {
+            counter = 0;
+            for (num = i; num >= 1; num--) {
+                if (i %num == 0) {
+                    counter = counter + 1;
+                }
+            }
+            if (counter == 2) {
+                listaresultado.add(i);
+            }
+        }
+        return listaresultado;
+
     }
 
     // Lesson 2 - arrays

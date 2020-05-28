@@ -12,7 +12,7 @@ public class Rectangle implements Shape {
     private double v1;
     private double v2;
 
-    public double Rectangle(Point a, double b, double c) {
+    public double Rectangle(Point bl, double b, double c) {
         v1 = b;
         v2 = c;
         return b;

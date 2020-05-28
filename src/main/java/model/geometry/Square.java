@@ -1,7 +1,11 @@
 package model.geometry;
 
-public class Square {
-    public double Square(Point bl, double w) {
-        return w;
+import com.edu.cedesistemas.oop.model.geometry.Point;
+import com.edu.cedesistemas.oop.model.geometry.Rectangle;
+
+public class Square extends Rectangle {
+
+    public Square(Point bl, double b) {
+        super(bl, b, b);
     }
 }
