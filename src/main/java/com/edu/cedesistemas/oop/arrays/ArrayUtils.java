@@ -10,17 +10,32 @@ public final class ArrayUtils {
     public static void bubbleSort(Integer[] array) {
         // Implemente codigo
         boolean swapped = true;
-        int j = 0;
-        int tmp = 0;
-        while (swapped = true){
-            
+        Integer j = 0;
+        Integer tmp = 0;
+        int i =0;
+        while (swapped == true){
+            swapped = false;
+            j++;
+            for (i = 0 ; i < array.length - j ; i++){
+                if (array[i] > array[i + 1]){
+                    tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                    swapped = true;
+                }
+            }
         }
     }
 
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
-        // Implemente codigo
-        return 0;
+
+        Integer resultado = 0;
+        int i = 0;
+        for (i = 0; i <= list.size() - 1 ; i++){
+             resultado = resultado + list.get(i).intValue();
+        }
+        return resultado;
     }
 
     // Lesson 2 -- ArrayList
