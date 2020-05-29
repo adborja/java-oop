@@ -1,7 +1,5 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-import java.awt.*;
-
 public class Rectangle implements Shape{
 
     private Point bl;

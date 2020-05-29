@@ -1,7 +1,5 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-import java.awt.*;
-
 public class Segment implements Shape{
 
     private Point p1;
