@@ -8,19 +8,51 @@ public final class ArrayUtils {
 
     // Lesson 2 - - arrays
     public static void bubbleSort(Integer[] array) {
-        // Implemente codigo
+        boolean swapped = true;
+        int i= 0;
+        int tmp = 0;
+
+        while (swapped) {
+            swapped = false;
+            i++;
+            for (i = 0; i < array.length; i++){
+                if (array[i] > array[i + 1]){
+                    tmp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = tmp;
+                    swapped = true;
+                }
+            }
+        }
     }
 
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
-        // Implemente codigo
+            int i = 0;
+            int sum = 0;
+            for(i=1; i<=list.length; i++){
+
+            }
         return 0;
     }
 
     // Lesson 2 -- ArrayList
     public static List<Integer> getPrimeNumbers(int limit) {
-        // Implemente codigo
-        return null;
+        ArrayList<Integer> listaresultado = new ArrayList<>();
+        int i = 0;
+        int num = 0;
+        for (i = 1; i <= limit; i++){
+            int counter = 0;
+            for(num = i; num >= 1; num--){
+                if (i%num == 0){
+                    counter = counter +1;
+                }
+            }
+            if (counter == 2){
+                listaresultado.add(i);
+            }
+        }
+        return listaresultado;
     }
 
     // Lesson 2 - arrays
