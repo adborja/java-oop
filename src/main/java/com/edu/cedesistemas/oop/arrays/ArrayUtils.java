@@ -30,8 +30,12 @@ public final class ArrayUtils {
 
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
-        // Implemente codigo
-        return 0;
+
+        int sum = 0;
+        for(int i:list){
+            sum= sum + i;
+        }
+        return sum;
     }
 
     // Lesson 2 -- ArrayList
