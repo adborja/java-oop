@@ -1,8 +1,8 @@
 package Vehicle;
 
-public class Fuel extends Car{
+public class FuelCar extends Car{
 
-    public Fuel(double speed, String name, String type) {
+    public FuelCar(double speed, String name, String type) {
         super(speed, name, type);
     }
 
