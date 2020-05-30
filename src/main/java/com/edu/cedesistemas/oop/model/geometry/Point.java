@@ -14,6 +14,7 @@ public class Point {
         return y;
     }
     public double distance(Point object1,Point object2) {
+
         return x;
     }
     public Point of(double x,double y) {
