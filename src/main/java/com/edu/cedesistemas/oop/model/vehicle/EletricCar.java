@@ -1,4 +1,4 @@
-package model.vehicle;
+package com.edu.cedesistemas.oop.model.vehicle;
 
 public class EletricCar extends Car {
 

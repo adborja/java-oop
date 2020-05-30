@@ -1,4 +1,4 @@
-package model.vehicle;
+package com.edu.cedesistemas.oop.model.vehicle;
 
 public class DiselCar extends Car{
     public DiselCar(double speed, String name, String type) {

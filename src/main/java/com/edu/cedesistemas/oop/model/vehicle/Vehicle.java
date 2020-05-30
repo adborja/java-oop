@@ -1,4 +1,4 @@
-package model.vehicle;
+package com.edu.cedesistemas.oop.model.vehicle;
 
 import com.edu.cedesistemas.oop.model.geometry.Point;
 import com.edu.cedesistemas.oop.model.geometry.Segment;
