@@ -1,14 +1,14 @@
 package com.edu.cedesistemas.oop.model.vehicle;
 
-// Lesson 2 -- Inner classes
-public class GasCar extends Car {
-    public GasCar(double speed, String name, String type) {
-        super(speed, name, type);
+public class GasCar extends FuelCar {
+    public GasCar(double speed, String name, double consumption, String type) {
+        super(speed, name, consumption, type);
     }
 
     @Override
-    public void tank() {
+    public void tank(int quantity) {
         System.out.println("gas car tanking");
+        this.currentTankQuantity += quantity;
     }
 
     @Override

@@ -1,13 +1,14 @@
 package com.edu.cedesistemas.oop.model.vehicle;
 
 public class DieselCar extends Car {
-    public DieselCar(double speed, String name, String type) {
-        super(speed, name, type);
+    public DieselCar(double speed, String name, double consumption) {
+        super(speed, name, consumption);
     }
 
     @Override
-    public void tank() {
+    public void tank(int quantity) {
         System.out.println("diesel car tanking");
+        this.currentTankQuantity += quantity;
     }
 
     @Override

@@ -8,26 +8,56 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.Random;
 import java.util.UUID;
 
 public abstract class Car implements Vehicle, Comparable<Car>{
     protected String id;
     protected double traveledKms;
     protected final String name;
-    protected final String type;
     protected final double speed;
+    protected final double consumption;
+    protected int currentTankQuantity;
     private final List<Movement> movements;
     private LocalDateTime lastMaintenanceDate;
+    private boolean empty;
 
-    public Car(double speed, String name, String type) {
+    public Car(double speed, String name, double consumption) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
-        this.type = type;
+        this.consumption = consumption;
         this.speed = speed;
         movements = new ArrayList<>();
+
+        // Getting random value for initial tank quantity;
+        this.currentTankQuantity = new Random().nextInt(5 - 3) + 3;
     }
 
-    public abstract void tank();
+    public abstract void tank(int quantity);
+
+    public int getCurrentTankQuantity() {
+        return currentTankQuantity;
+    }
+
+    public void consume(double distance) {
+        System.out.println(getName() + " consuming. Distance: " + distance +"." +
+                " Current tank quantity: " + currentTankQuantity);
+        if (empty) {
+            return;
+        }
+
+        int quantity = (int) (distance / this.consumption);
+        if (this.currentTankQuantity >= quantity) {
+            this.currentTankQuantity -= quantity;
+        } else {
+            currentTankQuantity = 0;
+            empty = true;
+        }
+    }
+
+    public boolean isEmpty() {
+        return empty;
+    }
 
     @Override
     public void setId(String id) {
@@ -44,6 +74,7 @@ public abstract class Car implements Vehicle, Comparable<Car>{
         double distance = Point.distance(p1, p2);
         traveledKms += distance;
         double time = distance / speed;
+        consume(distance);
         Segment s = new Segment(p1, p2);
         Movement movement = new Movement(s, time);
         movements.add(movement);
@@ -80,37 +111,10 @@ public abstract class Car implements Vehicle, Comparable<Car>{
         return speed;
     }
 
-    // Lesson 3 -- Comparable
     @Override
     public int compareTo(Car car) {
-        Double mySpeed =  this.speed;
-        Double otherSpeed = car.speed;
-        return mySpeed.compareTo(otherSpeed);
-    }
-
-    // Lesson 2 -- Inner classes
-    // Lesson 3 -- Comparator
-    public static class CarComparator implements Comparator<Car> {
-        @Override
-        public int compare(Car car1, Car car2) {
-            // What car is slower?
-            Double speed1 = car1.speed;
-            Double speed2 = car2.speed;
-            return speed2.compareTo(speed1);
-        }
-    }
-
-    // Lesson 4 -- Sets
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Car car = (Car) o;
-        return Objects.equals(id, car.id);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id);
+        Double t1 = this.traveledKms / this.speed;
+        Double t2 = car.traveledKms / car.speed;
+        return t1.compareTo(t2);
     }
 }

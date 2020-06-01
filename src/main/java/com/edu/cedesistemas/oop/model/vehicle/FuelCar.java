@@ -2,9 +2,11 @@ package com.edu.cedesistemas.oop.model.vehicle;
 
 public class FuelCar extends Car {
     private CylinderType cylinderType;
+    private final String type;
 
-    public FuelCar(double speed, String name, String type) {
-        super(speed, name, type);
+    public FuelCar(double speed, String name, double consumption, String type) {
+        super(speed, name, consumption);
+        this.type = type;
     }
 
     public void setCylinderType(CylinderType cylinderType) {
@@ -16,8 +18,9 @@ public class FuelCar extends Car {
     }
 
     @Override
-    public void tank() {
+    public void tank(int quantity) {
         System.out.println("fuel car tanking");
+        this.currentTankQuantity += quantity;
     }
 
     @Override
