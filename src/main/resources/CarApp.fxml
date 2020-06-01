@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<AnchorPane maxHeight="400.0" maxWidth="600.0" minHeight="400.0" minWidth="600.0" prefHeight="400.0" prefWidth="600.0"
+            styleClass="root" stylesheets="/css.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.edu.cedesistemas.oop.ui.CarAppController">
+    <children>
+        <AnchorPane layoutX="416.0" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="185.0">
+            <children>
+                <VBox prefHeight="398.0" prefWidth="183.0">
+                    <children>
+                        <Label text="number" styleClass="normal-label" />
+                        <TextField id="number" fx:id="txtNumber" />
+                        <Label text="movements" styleClass="normal-label" />
+                        <TextField id="movements" fx:id="txtMovements" />
+                        <Button mnemonicParsing="false" onAction="#handleRunButtonAction" prefHeight="66.0" prefWidth="193.0" text="run" fx:id="runButton" />
+                        <Button fx:id="clearButton" mnemonicParsing="false" onAction="#handleClearButtonAction" prefHeight="67.0" prefWidth="266.0" text="clear" />
+                        <TextArea fx:id="txtStats" prefHeight="500.0" prefWidth="266.0" editable="false" />
+                    </children>
+                </VBox>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="-7.0" prefHeight="400.0" prefWidth="420.0">
+            <children>
+                <LineChart fx:id="lineGraph" prefHeight="372.0" prefWidth="423.0" visible="false">
+                    <xAxis>
+                        <!--NumberAxis autoRanging="false" lowerBound="-10" side="BOTTOM" tickUnit="1" upperBound="10" / -->
+                        <NumberAxis autoRanging="false" side="BOTTOM" tickUnit="1" upperBound="120" />
+                    </xAxis>
+                    <yAxis>
+                        <!-- NumberAxis autoRanging="false" lowerBound="-10" side="LEFT" tickUnit="1" upperBound="10" / -->
+                        <NumberAxis autoRanging="false" side="LEFT" tickUnit="1" upperBound="120" />
+                    </yAxis>
+                    <cursor>
+                        <Cursor fx:constant="CROSSHAIR" />
+                    </cursor>
+                </LineChart>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>
