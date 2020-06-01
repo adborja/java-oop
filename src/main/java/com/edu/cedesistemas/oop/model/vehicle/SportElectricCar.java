@@ -5,4 +5,5 @@ public class SportElectricCar extends EletricCar{
     public SportElectricCar(double speed, String name, String type) {
         super(speed, name, type);
     }
+
 }
