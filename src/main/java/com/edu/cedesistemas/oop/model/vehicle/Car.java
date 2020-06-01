@@ -80,11 +80,12 @@ public abstract class Car implements Vehicle, Comparable<Car>{
         return speed;
     }
 
+    // Lesson 3 -- Comparable
     @Override
     public int compareTo(Car car) {
-        Double t1 = this.traveledKms / this.speed;
-        Double t2 = car.traveledKms / car.speed;
-        return t1.compareTo(t2);
+        Double mySpeed =  this.speed;
+        Double otherSpeed = car.speed;
+        return mySpeed.compareTo(otherSpeed);
     }
 
     // Lesson 2 -- Inner classes
@@ -93,9 +94,9 @@ public abstract class Car implements Vehicle, Comparable<Car>{
         @Override
         public int compare(Car car1, Car car2) {
             // What car is slower?
-            Double t1 = car1.traveledKms / car1.speed;
-            Double t2 = car2.traveledKms / car2.speed;
-            return t2.compareTo(t1);
+            Double speed1 = car1.speed;
+            Double speed2 = car2.speed;
+            return speed2.compareTo(speed1);
         }
     }
 
