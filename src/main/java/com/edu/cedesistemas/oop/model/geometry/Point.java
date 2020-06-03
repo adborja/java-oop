@@ -1,26 +1,6 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-<<<<<<< HEAD
-public class Point extends Segment{
-    private double x;
-    private double y;
 
-    public Point (double punto1,double punto2){
-        x=punto1;
-        y=punto2;
-    }
-    public double getX(){
-        return getX();
-    }
-    public double getY(){
-        return getY();
-    }
-    public double distancia(){
-        return x+y;
-    }
-
-}
-=======
 import java.util.Objects;
 import java.util.Random;
 
@@ -74,4 +54,22 @@ public class Point {
         return "(" + x + "," + y + ")";
     }
 }
->>>>>>> 0c7e45e58b1bb8fda2db72ba70825afe69151c48
+/*public class Point extends Segment{
+    private double x;
+    private double y;
+
+    public Point (double punto1,double punto2){
+        x=punto1;
+        y=punto2;
+    }
+    public double getX(){
+        return getX();
+    }
+    public double getY(){
+        return getY();
+    }
+    public double distancia(){
+        return x+y;
+    }
+
+}*/

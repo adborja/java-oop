@@ -1,48 +1,7 @@
 package com.edu.cedesistemas.oop.model.geometry;
-
-<<<<<<< HEAD
-import com.sun.jdi.Value;
-
-import java.awt.*;
-
-public class Segment implements Shape{
-    private Point p1;
-    private Point p2;
-    private String name;
-
-    public Segment() {
-
-    }
-
-    @Override
-    public double area() {
-        return 0;
-    }
-
-    @Override
-    public double perimeter() {
-        return 0;
-    }
-
-    public Point getP1() {
-        return p1;
-    }
-
-    public Point getP2() {
-        return p2;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public double getValue(){
-        double valor= p1.getX()*p2.getY();
-        return valor;
-    }
-}
-=======
 import java.util.Objects;
+import com.sun.jdi.Value;
+import java.awt.*;
 
 public class Segment implements Shape {
     private final Point p1;
@@ -103,4 +62,41 @@ public class Segment implements Shape {
         return getValue();
     }
 }
->>>>>>> 0c7e45e58b1bb8fda2db72ba70825afe69151c48
+
+
+/*public class Segment implements Shape{
+    private Point p1;
+    private Point p2;
+    private String name;
+
+    public Segment() {
+
+    }
+
+    @Override
+    public double area() {
+        return 0;
+    }
+
+    @Override
+    public double perimeter() {
+        return 0;
+    }
+
+    public Point getP1() {
+        return p1;
+    }
+
+    public Point getP2() {
+        return p2;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public double getValue(){
+        double valor= p1.getX()*p2.getY();
+        return valor;
+    }
+}*/

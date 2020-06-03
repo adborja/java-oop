@@ -1,29 +1,4 @@
 package com.edu.cedesistemas.oop.model.geometry;
-
-<<<<<<< HEAD
-public class Triangle implements Shape{
-    private Segment[] lados;
-    private String tipo;
-
-
-    public Triangle(Segment[] l){
-        l=lados;
-    }
-    public Triangle(Point l1, Point l2, Point l3){
-
-    }
-   public Segment[] getLados(){
-        return getLados();
-   }
-   public String getTipo(){
-        return getTipo();
-   }
-
-    @Override
-    public double area() {
-        double a= Math.PI*3;
-        return a;
-=======
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -54,12 +29,10 @@ public class Triangle implements Shape {
 
         double s = (_s1 + _s2 + _s3) / 2;
         return Math.sqrt(s * (s - _s1) * (s - _s2) * (s - _s3));
->>>>>>> 0c7e45e58b1bb8fda2db72ba70825afe69151c48
     }
 
     @Override
     public double perimeter() {
-<<<<<<< HEAD
         double p = Math.PI*4;
         return p;
     }
@@ -68,27 +41,7 @@ public class Triangle implements Shape {
         agl = Math.PI/distancia.getValue();
         return agl;
     }
-    private void determineTipo(){
-    }
-    private void removeSide(Segment[] arreglo, Segment b){
-
-    }
-    private boolean isisoceles(Triangle iso){
-        return true;
-    }
-    private boolean isescaleno(Triangle esca){
-        return true;
-    }
-    private boolean isequilatero(Triangle equi){
-        return true;
-    }
-}
-
-=======
-        return sides[0].getValue() + sides[1].getValue() + sides[2].getValue();
-    }
-
-    public double angle(Segment c) {
+    /*public double angle(Segment c) {
         Segment[] asides = removeSide(this.sides, c);
         if (asides != null) {
             Segment a = asides[0];
@@ -98,6 +51,20 @@ public class Triangle implements Shape {
             return Math.toDegrees(Math.acos(calc));
         }
         return 0;
+    }*/
+    private void determineTipo(){
+    }
+    /*private void removeSide(Segment[] arreglo, Segment b){
+
+    }*/
+    private boolean isisoceles(Triangle iso){
+        return true;
+    }
+    private boolean isescaleno(Triangle esca){
+        return true;
+    }
+    private boolean isequilatero(Triangle equi){
+        return true;
     }
 
     private static Segment[] removeSide(Segment[] segments, Segment segment) {
@@ -109,4 +76,28 @@ public class Triangle implements Shape {
         return null;
     }
 }
->>>>>>> 0c7e45e58b1bb8fda2db72ba70825afe69151c48
+
+
+/*public class Triangle implements Shape{
+    private Segment[] lados;
+    private String tipo;
+
+
+    public Triangle(Segment[] l){
+        l=lados;
+    }
+    public Triangle(Point l1, Point l2, Point l3){
+
+    }
+    public Segment[] getLados(){
+        return getLados();
+    }
+    public String getTipo(){
+        return getTipo();
+    }
+
+    @Override
+    public double area() {
+        double a= Math.PI*3;
+        return a;
+=======*/
