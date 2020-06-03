@@ -1,20 +1,24 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Ellipse implements Shape{
-    private double a;
-    private double b;
+public class Ellipse implements Shape {
+    protected final double a;
+    private final double b;
 
-    public Ellipse(double a, double b){ }
-
-    public double getA(){
-        return this.a;
+    public Ellipse(double a, double b) {
+        this.a = a;
+        this.b = b;
     }
 
-    public double getB(){
-        return this.b;
+    public double getA() {
+        return a;
     }
 
-    public double area(){
+    public double getB() {
+        return b;
+    }
+
+    @Override
+    public double area() {
         return Math.PI * a * b;
     }
 

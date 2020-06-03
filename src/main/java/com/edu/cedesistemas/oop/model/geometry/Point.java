@@ -1,11 +1,15 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Point extends Segment{
-    private double x;
-    private double y;
+import java.util.Objects;
+import java.util.Random;
 
-    public Point(double x, double y){
-        super(new Point(x, y), new Point(x, y));
+public class Point {
+    private final double x;
+    private final double y;
+
+    public Point(double x, double y) {
+        this.x = x;
+        this.y = y;
     }
 
     public double getX() {
@@ -16,15 +20,36 @@ public class Point extends Segment{
         return y;
     }
 
-    public double distance(Point p1, Point p2){
-        return  0;
+    public static double distance(Point p1, Point p2) {
+        return Math.sqrt(Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2));
     }
 
-    public Point od(double p1, double p2){
-        return  new Point(0, 0);
+    public static Point of(double x, double y) {
+        return new Point(x, y);
     }
 
-    public Point random(int n){
-        return  new Point(0, 0);
+    public static Point random(int bound) {
+        double x1 = new Random().nextDouble() * bound;
+        double y1 = new Random().nextDouble() * bound;
+        return of(x1, y1);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Point point = (Point) o;
+        return Double.compare(point.x, x) == 0 &&
+                Double.compare(point.y, y) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(x, y);
+    }
+
+    @Override
+    public String toString() {
+        return "(" + x + "," + y + ")";
     }
 }
