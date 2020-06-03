@@ -44,6 +44,7 @@ public class CarAppController implements Initializable {
 
     @FXML
     private void handleRunButtonAction(final ActionEvent event) {
+
         List<Car> cars = CarSimulator.simulate(Integer.parseInt(txtNumber.getText()),
                 Integer.parseInt(txtMovements.getText()));
 
