@@ -26,7 +26,7 @@ public class Race<T> {
 
         // Reasignar el tiempo del movimiento del carro
 
-        //System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
+        System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
     }
 
     public void race() {
