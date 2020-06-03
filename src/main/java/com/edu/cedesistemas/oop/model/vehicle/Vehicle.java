@@ -7,8 +7,8 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 public interface Vehicle {
-    Movement move(Point p1, Point p2);//Retorna el segmento entre 2 puntos
-    List<Movement> getMovements(); //lista de todos los movimientos que hizo el vehiculo
+    Movement move(Point p1, Point p2);
+    List<Movement> getMovements();
     void power();
     double getSpeed();
     LocalDateTime getLastMaintenanceDate();

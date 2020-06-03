@@ -16,15 +16,15 @@ public abstract class Car implements Vehicle, Comparable<Car>{
     protected double traveledKms;
     protected final String name;
     protected final double speed;
-    protected final double consumption;//Consumo por recorrido.
-    protected int currentTankQuantity;//gasolina en un tiempo dado
-    private final List<Movement> movements;//lista de movimientos del carro.
+    protected final double consumption;
+    protected int currentTankQuantity;
+    private final List<Movement> movements;
     private LocalDateTime lastMaintenanceDate;
-    private boolean empty; //si el vehiculo está vacío o no.
+    private boolean empty;
 
     public Car(double speed, String name, double consumption) {
         this.id = UUID.randomUUID().toString();
-        this.name = name; //marca de carro.
+        this.name = name;
         this.consumption = consumption;
         this.speed = speed;
         movements = new ArrayList<>();
