@@ -10,7 +10,7 @@ public class Segment implements Shape {
     public Segment(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        this.name = p1.toString() + "_" + p2.toString();
+        this.name = p1.toString() + " ---> " + p2.toString();
     }
 
     public Point getP1() {
@@ -23,6 +23,10 @@ public class Segment implements Shape {
 
     public String getName() {
         return name;
+    }
+
+    public double length() {
+        return Point.distance(p1, p2);
     }
 
     public double getValue() {
