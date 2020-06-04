@@ -1,19 +1,24 @@
 package com.edu.cedesistemas.oop.model.vehicles;
 
-public class ElectricCar extends Car {
+import com.edu.cedesistemas.oop.model.vehicles.ElectricCar;
 
-    public ElectricCar(double speed, String name, String type) {
-        super(speed, name, type);
+public class ElectricCar extends Car {
+    public ElectricCar(double speed, String name, double consumption) {
+        super(speed, name, consumption);
+    }
+
+    @Override
+    public void tank(int quantity) {
+
     }
 
     @Override
     public void tank() {
-        System.out.println("Tanquear carro electrico");
+
     }
 
     @Override
     public void power() {
-        System.out.println("Prender carro electrico");
+        System.out.println("Encender Electric car");
     }
-
 }

@@ -1,15 +1,16 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
+import java.awt.*;
+
 public class Segment implements Shape{
 
     private Point p1;
     private Point p2;
     private String name;
 
-    public Segment(Point p1, Point p2, String name) {
+    public Segment(Point p1, Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        this.name = name;
     }
 
     public Point getP1() {
@@ -24,13 +25,14 @@ public class Segment implements Shape{
         return name;
     }
 
-    public void getValue(double a){
-
+    public double getValue() {
+        return 0;
     }
 
-    public void getSlope(){
-
+    public double slope() {
+        return 0;
     }
+
 
     @Override
     public double area() {
