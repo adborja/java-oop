@@ -15,7 +15,7 @@ public class Race<T> {
         cars.add(car);
     }
 
-    public void pits(PitStop<T> pitStop) {
+    public void pits(PitStop<T> pitStop){
         // tanquear el carro
         // ajustar el carro
         // cambiar llantas
@@ -26,7 +26,7 @@ public class Race<T> {
 
         // Reasignar el tiempo del movimiento del carro
 
-        //System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
+        System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
     }
 
     public void race() {
