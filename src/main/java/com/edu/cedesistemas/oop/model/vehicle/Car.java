@@ -71,7 +71,7 @@ public abstract class Car implements Vehicle, Comparable<Car>{
 
     @Override
     public Movement move(Point p1, Point p2) {
-        double distance = Point.distance(p1, p2);
+        double distance = p1.distance(p1, p2);
         traveledKms += distance;
         double time = distance / speed;
         consume(distance);
