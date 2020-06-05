@@ -1,5 +1,12 @@
 package com.edu.cedesistemas.oop.generics;
 
+import com.edu.cedesistemas.oop.model.geometry.Point;
+import com.edu.cedesistemas.oop.model.geometry.PointComparator;
+import com.edu.cedesistemas.oop.model.geometry.ReversePointComparator;
+import com.edu.cedesistemas.oop.model.vehicle.Car;
+import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
+import com.edu.cedesistemas.oop.model.vehicle.FuelCar;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -15,5 +22,29 @@ public class SortDemo {
         System.out.println("before sort doubles: " + doubles);
         Sorter.bubbleSort(doubles);
         System.out.println("after sort doubles: " + doubles);
+
+        List<Car> cars = new ArrayList<>();
+        Car car1 = new ElectricCar(100, "mazda", 40);
+        Car car2 = new FuelCar(80, "renault", 40, "2WD");
+        cars.add(car1);
+        cars.add(car2);
+
+        System.out.println("before sort cars: " + cars);
+        Sorter.bubbleSort(cars);
+        System.out.println("after sort cars: " + cars);
+
+        List<Point> points = new ArrayList<>(Arrays.asList(Point.of(5, 3),
+                Point.of(10, 20), Point.of(74, -10)));
+
+        PointComparator pointComparator = new PointComparator();
+        System.out.println("before sort points: " + points);
+        Sorter.bubbleSort(points, pointComparator);
+        System.out.println("after sort points: " + points);
+
+        ReversePointComparator reversePointComparator = new ReversePointComparator();
+        System.out.println("before sort points: " + points);
+        Sorter.bubbleSort(points, reversePointComparator);
+        System.out.println("after sort points: " + points);
+
     }
 }

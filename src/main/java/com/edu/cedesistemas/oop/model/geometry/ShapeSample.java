@@ -19,11 +19,15 @@ public class ShapeSample {
 
         CircleRadiusComparator radiusComparator = new CircleRadiusComparator();
         System.out.println("before sorting: " + circles);
-        Collections.sort(circles, radiusComparator);
+        //Collections.sort(circles, radiusComparator);
+        Collections.sort(circles);
         System.out.println("after sorting: " + circles);
 
         // Scaler sample (generics)...
+        /*
         Circle scaledCircle = ShapeScaler.scale(circle1, 50);
         System.out.println("scaled circle: " + scaledCircle);
+        */
+
     }
 }
