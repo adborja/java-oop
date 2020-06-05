@@ -1,5 +1,9 @@
 package com.edu.cedesistemas.oop.model.vehicle.race;
 
+import com.edu.cedesistemas.oop.model.geometry.Point;
+import com.edu.cedesistemas.oop.model.vehicles.Car;
+import com.edu.cedesistemas.oop.model.vehicles.ElectricCar;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -15,18 +19,23 @@ public class Race<T> {
         cars.add(car);
     }
 
-    public void pits(PitStop<T> pitStop) {
+    public <T extends PitStop> void pits(PitStop<T> pitStop) {
         // tanquear el carro
+        pitStop.tank(30);
         // ajustar el carro
+        pitStop.adjust();
         // cambiar llantas
+        pitStop.changeTires();
         // reparar el carro
+        pitStop.repair();
 
         // Adding additional time to car ...
+        T car = pitStop.getCar();
         double extraTime = new Random().nextDouble() * 0.5;
 
         // Reasignar el tiempo del movimiento del carro
 
-        //System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
+        System.out.println("car " + car.getName() + " finishing pits. Extra time: " + extraTime);
     }
 
     public void race() {
@@ -38,6 +47,18 @@ public class Race<T> {
             crear un movimiento
             agregar el movimiento al carro
         * */
+        int bound = 100;
+        //Point pt = new Point(0,0);
+        //Point pt2 = new Point(0,0);
+        for (int i=0; i < cars.size(); i++){
+            int speed = new Random().nextInt(120 - 1) + 1;
+            String name = "";
+            Car car = new RaceCar(speed, "CARRO", 12, "", RaceCar.Team.MCLAREN);
+            //Point startingPoint = pt.of(0,0);
+            Point startingPoint = Point.of(0,0);
+            //Point p = pt2.random(bound);
+            Point p = Point.random(bound);
+        }
     }
 
     public T getWinner() {

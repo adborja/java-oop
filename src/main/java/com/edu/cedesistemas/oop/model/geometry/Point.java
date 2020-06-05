@@ -16,16 +16,16 @@ public class Point {
         return y;
     }
 
-    public double distance(Point pt1, Point pt2) {
+    public static double distance(Point pt1, Point pt2) {
         return 0;
     }
 
-    public Point of(double x, double y) {
+    public static Point of(double x, double y) {
         Point pt = new Point(x, y);
         return pt;
     }
 
-    public Point random(int nro) {
+    public static Point random(int nro) {
         Point pt = new Point(nro, nro);
         return pt;
     }

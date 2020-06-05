@@ -13,7 +13,6 @@ import java.util.List;
 public class LinkedListShapeSample {
     public static void main(String[] args) {
         List<Shape> shapes = new LinkedList<>();
-
         Shape rectangle = new Rectangle(Point.of(5, 4), 20, 40);
         Shape square = new Square(Point.of(5, 20), 15);
         Shape segment = new Segment(Point.of(-5, 10), Point.of(10, 15));

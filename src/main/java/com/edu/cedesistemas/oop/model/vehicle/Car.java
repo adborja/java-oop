@@ -51,7 +51,7 @@ public abstract class Car implements Vehicle, Comparable<Car>{
             this.currentTankQuantity -= quantity;
         } else {
             currentTankQuantity = 0;
-            empty = true;
+            this.empty = true;
         }
     }
 
