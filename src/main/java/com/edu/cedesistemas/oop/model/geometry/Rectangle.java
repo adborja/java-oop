@@ -1,33 +1,38 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Rectangle implements Shape{
+// Lesson 1 -- Classes
+public class Rectangle implements Shape {
+    private final Point bl;
+    private final Point tr;
+    private final Point br;
+    private final Point tl;
+    private final double height;
+    private final double width;
 
-    private Point bl;
-    private Point tr;
-    private Point br;
-    private Point tl;
-    private double height;
-    private double width;
-
-    public Rectangle(double height, double width) {
-        this.height = height;
-        this.width = width;
+    // Lesson 1 -- Constructores
+    public Rectangle(Point bl, double w, double h) {
+        this.bl = bl;
+        this.tl = Point.of(bl.getX(), bl.getY() + h);
+        this.br = Point.of(bl.getX() + w, bl.getY());
+        this.tr = Point.of(bl.getX() + w, bl.getY() + h);
+        this.height = h;
+        this.width = w;
     }
 
-    public Point getBl() {
+    public Point getTopRight() {
+        return tr;
+    }
+
+    public Point getBottomLeft() {
         return bl;
     }
 
-    public Point getBr() {
+    public Point getBottomRight() {
         return br;
     }
 
-    public Point getTl() {
+    public Point getTopLeft() {
         return tl;
-    }
-
-    public Point getTr() {
-        return tr;
     }
 
     public double getHeight() {
@@ -40,11 +45,11 @@ public class Rectangle implements Shape{
 
     @Override
     public double area() {
-        return 0;
+        return getHeight() * getWidth();
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return 2 * (getHeight() + getWidth());
     }
 }
