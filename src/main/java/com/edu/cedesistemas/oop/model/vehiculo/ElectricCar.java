@@ -12,6 +12,11 @@ public class ElectricCar extends Car{
     }
 
     @Override
+    public boolean getLastMaintenanceDate() {
+        return false;
+    }
+
+    @Override
     public void power() {
         System.out.println("encender carro electrico");
     }

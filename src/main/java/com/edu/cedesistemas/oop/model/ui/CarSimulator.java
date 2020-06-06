@@ -23,37 +23,38 @@ public class CarSimulator {
             List<Car> result = new ArrayList<>();
             for (int i=0;i<n;i++){
 
-                //int speed = new Random().nextInt(bound:120 -1)+1;
-                //String name = pickName(i);
+                int speed = new Random().nextInt(120 -1)+1;
+                String name = pickName(i);
+                String type = "";
 
-                //Car car = new ElectricCar(speed,name,consumption:40);
+                Car car = new ElectricCar(speed,name,type);
 
-               // Point startingPoint = Point.of(x:0,y:0);
+                Point startingPoint = Point.of(0,0);
                 Point destinationPoit = Point.of(bound,bound);
 
                 Point p = Point.random(bound);
-                //car.move(startingPoint,p);
+                car.move(startingPoint,p);
                 Point lastPoint =p;
 
                 for (int j=0;j<movements;j++){
                     p = Point.random(bound);
-                    //car.move(lastPoint,p);
+                    car.move(lastPoint,p);
                     lastPoint =p;
                 }
                 //Go to destination ...
-                //car.move(lastPoint,destinationPoit);
+                car.move(lastPoint,destinationPoit);
 
                 //Apply penalty ...
-                /*applyPenalty(car);
+                applyPenalty(car);
 
-                result.add(car);*/
+                result.add(car);
 
             }
             return result;
         }
-        /*public static void applyPenalty(Car car) {
+        public static void applyPenalty(Car car) {
             double penaltyTime = 0.25; // 15 minutos
-            if (car.getLastMaintenanceDate() == null) {
+            /*if (car.getLastMaintenanceDate()==null) {
                 penaltyTime = penaltyTime * 2;
                 System.out.println("car" +car.getName()+"penalidad por no tener mantenimiento");
             } else {
@@ -72,7 +73,7 @@ public class CarSimulator {
                 penaltyTime = penaltyTime + 0.08333;
                 Random random = new Random();
                 int gallons = random.nextInt(5 - 3) + 3;
-                car.tank(gallons);
+                //car.tank(gallons);
                 System.out.println("car" +car.getName()+"penalidad por tanque vacio");
 
             }
@@ -85,9 +86,9 @@ public class CarSimulator {
                     time = time + penaltyTime;
                     m.setTime(time);
                 }
-            }
+            }*/
         }
         public static void main(String[] args) {
-        }*/
+        }
 
 }
