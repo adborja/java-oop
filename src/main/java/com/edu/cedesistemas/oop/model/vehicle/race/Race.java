@@ -19,7 +19,7 @@ public class Race<T extends RaceCar> {
         cars.add(car);
     }
 
-    public void pits(PitStop<T> pitStop) {
+    public <T extends RaceCar> void pits(PitStop<T> pitStop) {
         // tanquear el carro
         pitStop.tank(30);
         // ajustar el carro
