@@ -11,7 +11,7 @@ public class Main {
         RaceCar ferrari = new FormulaOneCar(120, "ferrari",
                 15, "2WD", RaceCar.Team.FERRARI);
 
-        RaceCar redBull = new FormulaOneCar(120, "redbull",
+        RaceCar redBull             = new FormulaOneCar(120, "redbull",
                 15, "2WD", RaceCar.Team.RED_BULL);
 
         PitStop<RaceCar> mercedesPS = new PitStop<>(mercedes);

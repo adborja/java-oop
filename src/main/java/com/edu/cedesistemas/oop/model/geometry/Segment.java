@@ -22,6 +22,10 @@ public class Segment implements Shape {
          return name;
     }
 
+    public double length() {
+        return Point.distance(p1, p2);
+    }
+
     public double getValue(){
          return 0;
     }
