@@ -36,4 +36,43 @@ public class Sorter {
 
     // Implement generic mergeSort
 
+    public static <T extends Comparable<T>> void mergeSort(List<T> array, int n) {
+        if (n < 2) {
+            return;
+        }
+        int mid = n / 2;
+        T[] l = new T[mid];
+        T[] r = new T[n - mid];
+
+        for (int i = 0; i < mid; i++) {
+            l[i] = array.get(i);
+        }
+
+        for (int i = mid; i < n; i++) {
+            r[i - mid] = array.get(i);
+        }
+        mergeSort(l, mid);
+        mergeSort(r, n - mid);
+
+        merge(array, l, r, mid, n - mid);
+    }
+
+    private static void merge(Integer[] a, Integer[] l, Integer[] r, int left, int right) {
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l[i] <= r[j]) {
+                a[k++] = l[i++];
+            }
+            else {
+                a[k++] = r[j++];
+            }
+        }
+        while (i < left) {
+            a[k++] = l[i++];
+        }
+        while (j < right) {
+            a[k++] = r[j++];
+        }
+    }
+
 }
