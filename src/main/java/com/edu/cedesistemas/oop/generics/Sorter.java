@@ -48,7 +48,7 @@ public class Sorter {
         int  mid = n / 2;
 
         List<T> l =  new ArrayList<>();
-        List<T> r = new ArrayList<>(10);
+        List<T> r = new ArrayList<>();
 
 
         for (int i = 0; i < mid; i++) {
