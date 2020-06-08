@@ -1,5 +1,6 @@
 package com.edu.cedesistemas.oop.generics;
 
+import com.edu.cedesistemas.oop.arrays.ArrayUtils;
 import com.edu.cedesistemas.oop.model.geometry.Point;
 import com.edu.cedesistemas.oop.model.geometry.PointComparator;
 import com.edu.cedesistemas.oop.model.geometry.ReversePointComparator;
@@ -7,6 +8,7 @@ import com.edu.cedesistemas.oop.model.vehicle.Car;
 import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
 import com.edu.cedesistemas.oop.model.vehicle.FuelCar;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,12 +16,18 @@ import java.util.List;
 public class SortDemo {
     public static void main(String[] args) {
         List<Integer> integers = new ArrayList<>(Arrays.asList(3, 8, 6, 4, 9, 2, 5, 1, 7));
-        System.out.println("before sort integers: " + integers);
-        Sorter.bubbleSort(integers);
+        Integer[] integres = {3, 8, 6, 4, 9, 2, 5, 1, 7};
+       System.out.println("before sort integers: " + integers);
+        //Sorter.bubbleSort(integers);
+        Sorter.mergeSort(integers,8);
         System.out.println("after sort integers: " + integers);
 
-        List<Double> doubles = new ArrayList<>(Arrays.asList(1.3, 1.8, 1.6, 1.4, 1.9, 1.2, 1.5, 1.1, 1.7));
-        System.out.println("before sort doubles: " + doubles);
+        /*List<Double> doubles = new ArrayList<>(Arrays.asList(1.3, 1.8, 1.6, 1.4, 1.9, 1.2, 1.5, 1.1, 1.7));
+        System.out.println("before mergeSort: " + doubles);
+        Sorter.mergeSort(doubles,9);
+        System.out.println("after mergeSort: " + doubles);*/
+
+        /*System.out.println("before sort doubles: " + doubles);
         Sorter.bubbleSort(doubles);
         System.out.println("after sort doubles: " + doubles);
 
@@ -28,7 +36,6 @@ public class SortDemo {
         Car car2 = new FuelCar(80, "renault", 40, "2WD");
         cars.add(car1);
         cars.add(car2);
-
         System.out.println("before sort cars: " + cars);
         Sorter.bubbleSort(cars);
         System.out.println("after sort cars: " + cars);
@@ -44,7 +51,12 @@ public class SortDemo {
         ReversePointComparator reversePointComparator = new ReversePointComparator();
         System.out.println("before sort points: " + points);
         Sorter.bubbleSort(points, reversePointComparator);
-        System.out.println("after sort points: " + points);
+        System.out.println("after sort points: " + points);*/
+
+
+
+
+
 
     }
 }
