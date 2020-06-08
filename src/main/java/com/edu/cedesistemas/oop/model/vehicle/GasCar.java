@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.model.vehicles;
+package com.edu.cedesistemas.oop.model.vehicle;
 
 public class GasCar extends Car {
     public GasCar(double speed, String name, String type) {

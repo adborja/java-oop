@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.model.vehicles;
+package com.edu.cedesistemas.oop.model.vehicle;
 
 public class SportElectricCar extends ElectricCar{
 

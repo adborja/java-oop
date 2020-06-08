@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.model.vehicles.race;
+package com.edu.cedesistemas.oop.model.vehicle.race;
 
 import java.util.ArrayList;
 import java.util.List;

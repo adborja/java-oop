@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.model.vehicles.race;
+package com.edu.cedesistemas.oop.model.vehicle.race;
 
 public class PitStop<T extends RaceCar> {
     private final T car;

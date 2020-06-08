@@ -1,6 +1,6 @@
-package com.edu.cedesistemas.oop.model.vehicles.race;
+package com.edu.cedesistemas.oop.model.vehicle.race;
 
-import com.edu.cedesistemas.oop.model.vehicles.FuelCar;
+import com.edu.cedesistemas.oop.model.vehicle.FuelCar;
 
 public class RaceCar extends FuelCar {
     protected final Team team;
