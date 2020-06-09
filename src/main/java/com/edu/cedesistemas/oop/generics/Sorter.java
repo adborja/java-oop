@@ -1,5 +1,6 @@
 package com.edu.cedesistemas.oop.generics;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -41,8 +42,8 @@ public class Sorter {
             return;
         }
         int mid = n / 2;
-        T[] l = new T[mid];
-        T[] r = new T[n - mid];
+        T[] l = new ArrayList<>(mid);
+        T[] r = new ArrayList<>(n - mid);
 
         for (int i = 0; i < mid; i++) {
             l[i] = array.get(i);
@@ -57,7 +58,7 @@ public class Sorter {
         merge(array, l, r, mid, n - mid);
     }
 
-    private static void merge(Integer[] a, Integer[] l, Integer[] r, int left, int right) {
+    private static <T extends Comparable<T>> void merge(List[] a, List[] l, List[] r, int left, int right) {
         int i = 0, j = 0, k = 0;
         while (i < left && j < right) {
             if (l[i] <= r[j]) {
