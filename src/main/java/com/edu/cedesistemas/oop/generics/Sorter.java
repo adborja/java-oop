@@ -1,5 +1,6 @@
 package com.edu.cedesistemas.oop.generics;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -35,5 +36,48 @@ public class Sorter {
     }
 
     // Implement generic mergeSort
+
+    public static <T extends Comparable<T>> void mergeSort(List<T> array) {
+        int n = array.size();
+        if (n < 2) {
+            return;
+        }
+
+        int mid = n / 2;
+
+        List<T> l = new ArrayList<>();
+        List<T> r = new ArrayList<>();
+
+        for (int i = 0; i < mid; i++) {
+            l.set(i,array.get(i));
+        }
+
+        for (int i = mid; i < n; i++) {
+            r.set(i - mid,array.get(i));
+        }
+        mergeSort(l);
+        mergeSort(r);
+
+        merge(array, l, r, mid, n - mid);
+    }
+
+    private static <T extends Comparable<T>> void merge(List<T>  a, List<T> l,List<T> r,int left, int right) {
+
+        int i = 0, j = 0, k = 0;
+        while (i < left && j < right) {
+            if (l.get(j).compareTo(r.get(j + 1)) == 0 || l.get(j).compareTo(r.get(j + 1)) < 0 ) {
+                a.set(k++,l.get(i++));
+            }
+            else {
+                a.set(k++,r.get(j++));
+            }
+        }
+        while (i < left) {
+            a.set(k++,l.get(i++));
+        }
+        while (j < right) {
+            a.set(k++,r.get(j++));
+        }
+    }
 
 }

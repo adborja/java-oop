@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import static com.edu.cedesistemas.oop.generics.Sorter.bubbleSort;
+
 public class ShapeSample {
     public static void main(String[] args) {
         Circle circle1 = new Circle(10);
@@ -20,7 +22,8 @@ public class ShapeSample {
         CircleRadiusComparator radiusComparator = new CircleRadiusComparator();
         System.out.println("before sorting: " + circles);
         //Collections.sort(circles, radiusComparator);
-        Collections.sort(circles);
+        //Collections.sort(circles);
+        //bubbleSort(circles,);
         System.out.println("after sorting: " + circles);
 
         // Scaler sample (generics)...

@@ -6,7 +6,7 @@ public class Circle extends Ellipse{
         super(radio,radio);
     }
 
-    public double getRadio() {
+    public double getRadius() {
        return getA();
     }
 
