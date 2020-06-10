@@ -32,7 +32,7 @@ public class GenericPoint<T extends Number> {
     public static <Y extends Number> GenericPoint<Y> random(int bound) {
         double x1 = new Random().nextDouble() * bound;
         double y1 = new Random().nextDouble() * bound;
-        return of(x1, y1);
+        return GenericPoint<Y>of(x1, y1);
     }
 
     @Override

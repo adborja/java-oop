@@ -42,15 +42,15 @@ public class Sorter {
             return;
         }
         int mid = n / 2;
-        T[] l = new ArrayList<>(mid);
-        T[] r = new ArrayList<>(n - mid);
+        List<T> l = new ArrayList<>(mid);
+        List<T> r = new ArrayList<>(n - mid);
 
         for (int i = 0; i < mid; i++) {
-            l[i] = array.get(i);
+            l.add(array.get(i));
         }
 
         for (int i = mid; i < n; i++) {
-            r[i - mid] = array.get(i);
+            r.add(i - mid,array.get(i));
         }
         mergeSort(l, mid);
         mergeSort(r, n - mid);
@@ -58,21 +58,21 @@ public class Sorter {
         merge(array, l, r, mid, n - mid);
     }
 
-    private static <T extends Comparable<T>> void merge(List[] a, List[] l, List[] r, int left, int right) {
+    private static <T extends Comparable<T>> void merge(List<T> a, List<T> l, List<T> r, int left, int right) {
         int i = 0, j = 0, k = 0;
         while (i < left && j < right) {
-            if (l[i] <= r[j]) {
-                a[k++] = l[i++];
+            if (l.get(i).compareTo(r.get(j)) <= 0) {
+                a.add(k++, l.get(i++));
             }
             else {
-                a[k++] = r[j++];
+                a.add(k++, l.get(j++));
             }
         }
         while (i < left) {
-            a[k++] = l[i++];
+            a.add(k++, l.get(i++));
         }
         while (j < right) {
-            a[k++] = r[j++];
+            a.add(k++, r.get(j++));
         }
     }
 
