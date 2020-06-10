@@ -1,8 +1,11 @@
 package com.edu.cedesistemas.oop.generics;
 
+import com.edu.cedesistemas.oop.collections.Stack;
+import com.edu.cedesistemas.oop.model.geometry.Circle;
 import com.edu.cedesistemas.oop.model.geometry.Point;
 import com.edu.cedesistemas.oop.model.geometry.PointComparator;
 import com.edu.cedesistemas.oop.model.geometry.ReversePointComparator;
+import com.edu.cedesistemas.oop.model.geometry.Shape;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
 import com.edu.cedesistemas.oop.model.vehicle.FuelCar;
@@ -45,13 +48,5 @@ public class SortDemo {
         System.out.println("before sort points: " + points);
         Sorter.bubbleSort(points, reversePointComparator);
         System.out.println("after sort points: " + points);
-
-        List<Integer> integer = new ArrayList<>(Arrays.asList(5, 1, 6, 2, 3, 4 ));
-        System.out.println("before sort integers: " + integer);
-        Sorter.mergeSort(integer, 6);
-        System.out.println("after sort integers: " + integer);
-
-
-
     }
 }
