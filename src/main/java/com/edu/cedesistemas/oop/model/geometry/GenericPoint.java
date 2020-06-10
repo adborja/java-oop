@@ -29,19 +29,18 @@ public class GenericPoint<T extends Number> {
         return new GenericPoint<K>(x, y);
     }
 
-    public static <Y extends Number> GenericPoint<Y> random(int bound) {
-        double x1 = new Random().nextDouble() * bound;
-        double y1 = new Random().nextDouble() * bound;
-        return GenericPoint<Y>of(x1, y1);
+    public static GenericPoint<Double> random(int bound) {
+        Double x1 = new Random().nextDouble() * bound;
+        Double y1 = new Random().nextDouble() * bound;
+        return of(x1, y1);
     }
 
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        GenericPoint<Z> point = (GenericPoint) o;
-        return Double.compare(point.x, x) == 0 &&
-                Double.compare(point.y, y) == 0;
+        GenericPoint<?> point = (GenericPoint<?>) o;
+        return  point.x.equals(x) && point.y.equals(y);
     }
 
     @Override
