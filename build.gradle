@@ -31,7 +31,8 @@ ext {
     //javaMainClass = "com.edu.cedesistemas.oop.arrays.ArrayListSample"
     //javaMainClass = "com.edu.cedesistemas.oop.ui.CarApp"
     //javaMainClass = "com.edu.cedesistemas.oop.model.vehicle.race.Main"
-    javaMainClass = "com.edu.cedesistemas.oop.generics.SortDemo"
+    //javaMainClass = "com.edu.cedesistemas.oop.generics.SortDemo"
+    javaMainClass = "com.edu.cedesistemas.oop.model.vehicle.Main"
 }
 
 dependencies {

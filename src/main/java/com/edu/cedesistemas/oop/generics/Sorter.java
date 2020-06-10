@@ -70,7 +70,7 @@ public class Sorter {
         int i = 0, j = 0, k = 0;
 
         while (i < left && j < right) {
-            if (l.get(i).compareTo(r.get(j)) <= 1) {
+            if (l.get(i).compareTo(r.get(j)) < 0 ) {
                 a.set(k++, l.get(i++));
             } else {
                 a.set(k++, r.get(j++));
