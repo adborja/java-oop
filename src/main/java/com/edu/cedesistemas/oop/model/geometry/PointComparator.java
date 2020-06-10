@@ -1,0 +1,13 @@
+package com.edu.cedesistemas.oop.model.geometry;
+
+import java.util.Comparator;
+
+public class PointComparator implements Comparator<Point> {
+    @Override
+    public int compare(Point p1, Point p2) {
+        if (p1.getX() == p2.getX() && p1.getY() == p2.getY()) {
+            return 0;
+        }
+        return p1.getX() > p2.getX() && p1.getY() > p2.getY() ? 1 : -1;
+    }
+}
