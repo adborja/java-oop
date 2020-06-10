@@ -2,8 +2,13 @@ package com.edu.cedesistemas.oop.model.vehicles;
 
 public class FuelCar extends Car{
 
-    public FuelCar(double speed, String name, String type) {
-        super(speed, name, type);
+    public FuelCar(double speed, String name, double consumption) {
+        super(speed, name, consumption);
+    }
+
+    @Override
+    public void tank(int quantity) {
+
     }
 
     @Override

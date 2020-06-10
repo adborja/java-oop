@@ -46,5 +46,12 @@ public class SortDemo {
         Sorter.bubbleSort(points, reversePointComparator);
         System.out.println("after sort points: " + points);
 
+        List<Integer> integer = new ArrayList<>(Arrays.asList(5, 1, 6, 2, 3, 4 ));
+        System.out.println("before sort integers: " + integer);
+        Sorter.mergeSort(integer, 6);
+        System.out.println("after sort integers: " + integer);
+
+
+
     }
 }
