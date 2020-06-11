@@ -33,6 +33,13 @@ public class ArrayUtilsTest {
     }
 
     @Test
+    public void testMergeSort() {
+        Integer[] array = { 5, 1, 6, 2, 3, 4 };
+        ArrayUtils.mergeSort(array, array.length);
+        assertThat(array, arrayContaining(1, 2, 3, 4, 5, 6));
+    }
+
+    @Test
     public void testPrimeNumbers() {
         int limit = 20;
         List<Integer> numbers = ArrayUtils.getPrimeNumbers(limit);
