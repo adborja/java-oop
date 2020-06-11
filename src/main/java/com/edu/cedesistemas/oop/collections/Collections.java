@@ -3,6 +3,7 @@ package com.edu.cedesistemas.oop.collections;
 import com.edu.cedesistemas.oop.model.geometry.Circle;
 import com.edu.cedesistemas.oop.model.vehicles.ElectricCar;
 
+import java.awt.font.NumericShaper;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -15,6 +16,9 @@ public class Collections {
 
     }
 
+    /**
+     Punto 1. Circles
+     **/
     public void listCircles(){
         List<Circle> circles = new ArrayList<>();
         double random=10;
@@ -28,6 +32,9 @@ public class Collections {
         }
     }
 
+    /**
+     Punto 2. Map Employee
+     **/
     public Map<Employee, String> loadMap(List<Employee> employees){
         Map<Employee, String> map = new HashMap<Employee, String>();
         for (Employee m: employees){
@@ -50,7 +57,6 @@ public class Collections {
             }
         }
         System.out.println("Employee con ID " + id + " NO fue Encontrado.");
-        return;
     }
 
     private List<Employee> getEmployees() {
@@ -80,12 +86,64 @@ public class Collections {
         consultEmployeeMap(map, "A36536");
     }
 
+    /**
+     Punto 3. Map Number
+     **/
+
+    public Map<Number, String> loadMapNumber(List<Number> numbers){
+        Map<Number, String> map = new HashMap<Number, String>();
+        for (Number n: numbers){
+            map.put(n , n.getNameSpanish());
+        }
+        return map;
+    }
+
+    private List<Number> getNumbers(){
+        List<Number> numbers = new ArrayList<>();
+        Number n = new Number(1, "Uno", "One");
+        numbers.add(n);
+        n = new Number(2, "Dos", "Two");
+        numbers.add(n);
+        n = new Number(3, "Tres", "Three");
+        numbers.add(n);
+        n = new Number(4, "Cuatro", "Four");
+        numbers.add(n);
+        n = new Number(5, "Cinco", "Five");
+        numbers.add(n);
+        return numbers;
+    }
+
+    private void consultNumberMap(Map<Number, String> map, Integer number){
+        for (Map.Entry<Number, String> key : map.entrySet()){
+            if (key.getKey().getNumber().equals(number)){
+                System.out.println("Number: " + key.getKey().getNumber() +
+                        ", Spanish: " + key.getValue() + ", English: " + key.getKey().getNameEnglish());
+                return;
+            }
+        }
+        System.out.println("No fue encontrado el numero: " + number);
+    }
+
+    public void testNumbers(){
+        Map<Number, String> map = loadMapNumber(getNumbers());
+        consultNumberMap(map, 1);
+        consultNumberMap(map, 2);
+        consultNumberMap(map, 8);
+        consultNumberMap(map, 3);
+        consultNumberMap(map, 9);
+        consultNumberMap(map, 4);
+        consultNumberMap(map, 5);
+        consultNumberMap(map, 6);
+    }
+
     public static void main(String[] args) {
         Collections collections = new Collections();
         System.out.println("--------1. Lista de Objetos Circle--------");
         collections.listCircles();
         System.out.println("--------2. Mapa de Objetos Employee--------");
         collections.testMaps();
+        System.out.println("--------3. Mapa de Numeros--------");
+        collections.testNumbers();
     }
 
 }
