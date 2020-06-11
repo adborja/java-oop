@@ -9,19 +9,19 @@ import java.util.function.Consumer;
 import java.util.function.Function;
 
 public class FunctionHandler {
-    public <T, R> R applyFunction(Function<T, R> f, T t) {
+    public static <T, R> R applyFunction(Function<T, R> f, T t) {
         return null;
     }
 
-    public <T extends Scalable<T, U>, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
+    public static <T extends Scalable<T, U>, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
         return null;
     }
 
-    public <T> void consume(Consumer<List<T>> consumer, List<T> list) {
+    public static  <T> void consume(Consumer<List<T>> consumer, List<T> list) {
 
     }
 
-    public Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
+    public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
         return null;
     }
 }

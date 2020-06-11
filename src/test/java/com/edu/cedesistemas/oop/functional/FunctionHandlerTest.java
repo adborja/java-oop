@@ -26,10 +26,9 @@ public class FunctionHandlerTest {
     @Test
     public void testGetArea() {
         double radius = 10;
-        FunctionHandler shapeHandler = new FunctionHandler();
         Circle circle = new Circle(radius);
         ShapeMultiplier<Circle, Double> shapeMultiplier = (c, v) -> c.scale(v);
-        Circle multiplied = shapeHandler.getMultiplied(shapeMultiplier, circle, 200D);
+        Circle multiplied = FunctionHandler.getMultiplied(shapeMultiplier, circle, 200D);
         Double area = multiplied.area();
 
         double circleArea = Math.PI * Math.pow(radius, 2);
@@ -42,18 +41,16 @@ public class FunctionHandlerTest {
 
     @Test
     public void testGetArea2() {
-        FunctionHandler functionHandler = new FunctionHandler();
         Rectangle rectangle = new Rectangle(Point.of(0, 0), 10, 15);
         Function<Rectangle, Double> f = r -> r.area();
-        Double area = functionHandler.applyFunction(f, rectangle);
+        Double area = FunctionHandler.applyFunction(f, rectangle);
         assertThat(area, equalTo(150D));
     }
 
     @Test
     public void testGetCarName() {
-        FunctionHandler functionHandler = new FunctionHandler();
         Function<Car, String> f = c -> c.getName();
-        String name = functionHandler.applyFunction(f, new ElectricCar(100, "honda", 60));
+        String name = FunctionHandler.applyFunction(f, new ElectricCar(100, "honda", 60));
         assertThat(name, equalTo("honda"));
     }
 
@@ -66,17 +63,14 @@ public class FunctionHandlerTest {
         List<Circle> circles = Arrays.asList(c1, c2, c3, c4);
 
         Consumer<List<Circle>> sorter = l -> Collections.sort(l);
-
-        FunctionHandler shapeHandler = new FunctionHandler();
-        shapeHandler.consume(sorter, circles);
+        FunctionHandler.consume(sorter, circles);
 
         assertThat(circles, contains(c3, c1, c4, c2));
     }
 
     @Test
     public void testCarMap() {
-        FunctionHandler handler = new FunctionHandler();
-        Function<List<Car>, Map<String, List<Car>>> function = handler.getCarMapper();
+        Function<List<Car>, Map<String, List<Car>>> function = FunctionHandler.getCarMapper();
 
         Car c1 = new ElectricCar(80, "mazda", 50);
         Car c2 = new FuelCar(100, "renault", 50, "2WD");
