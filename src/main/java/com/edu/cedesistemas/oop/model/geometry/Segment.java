@@ -1,51 +1,42 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Segment<string> implements Shape {
-    private point p1;
-    private point p2;
-    private string name;
+public class Segment implements Shape{
+    private Point p1;
+    private Point p2;
+    private String name;
 
-    //constructor
-    public Segment(point p1, point p2, string name) {
+    public Segment(Point p1,Point p2) {
         this.p1 = p1;
         this.p2 = p2;
-        this.name = name;
     }
 
-    public point getP1() {
+    public Point getP1() {
         return p1;
     }
 
-    public point getP2() {
+    public Point getP2() {
         return p2;
     }
 
-    public string getName() {
+    public String getName() {
         return name;
     }
 
     public double getValue() {
-        double x = 0;
-        return x;
+        return 1;
     }
 
     public double slope() {
-        double y = 0;
-        return y;
+        return 1;
     }
 
     @Override
     public double area() {
-        double z = 0;
-        return z;
+        return 1;
     }
 
     @Override
     public double perimeter() {
-        double p = 0;
-        return p;
-    }
-
-    private class point {
+        return 1;
     }
 }
