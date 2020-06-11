@@ -1,10 +1,8 @@
 package com.edu.cedesistemas.oop;
 
-import com.edu.cedesistemas.oop.model.geometry.Collections;
+import com.edu.cedesistemas.oop.collections.Collections;
 import com.edu.cedesistemas.oop.model.geometry.Ellipse;
-import com.edu.cedesistemas.oop.model.geometry.Rectangle;
 import com.edu.cedesistemas.oop.model.vehicles.ElectricCar;
-import com.edu.cedesistemas.oop.model.vehicles.FuelCar;
 
 public class Main {
     public static void main(String[] args)
@@ -17,8 +15,5 @@ public class Main {
         System.out.println("Area: " + rectangle.area());
         System.out.println("Perimetro: " + rectangle.perimeter());
         System.out.println("Nombre Vehicle: " + electricCar.getName());
-        System.out.println("-------------------------------------------");
-        Collections collections = new Collections();
-        collections.listCircles();
     }
 }
