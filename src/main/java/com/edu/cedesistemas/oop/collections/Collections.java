@@ -11,7 +11,8 @@ import java.util.Map;
 import java.util.Random;
 
 
-public class Collections {
+public class Collections  {
+
     public Collections(){
 
     }
@@ -98,6 +99,14 @@ public class Collections {
         return map;
     }
 
+    public Map<Object, String> loadMapNumberGen(List<?> numbers1){
+        Map<Object, String> map = new HashMap<Object, String>();
+        for (Object n: numbers1){
+            map.put(n, numbers1.get(0).toString());
+        }
+        return map;
+    }
+
     private List<Number> getNumbers(){
         List<Number> numbers = new ArrayList<>();
         Number n = new Number(1, "Uno", "One");
@@ -136,6 +145,35 @@ public class Collections {
         consultNumberMap(map, 6);
     }
 
+    public void testNumbersGen(){
+        Map<?, String> map = loadMapNumberGen(getNumbers());
+        consultNumberMapGen(map, 1);
+        consultNumberMapGen(map, 2);
+        consultNumberMapGen(map, 8);
+        consultNumberMapGen(map, 3);
+        consultNumberMapGen(map, 9);
+        consultNumberMapGen(map, 4);
+        consultNumberMapGen(map, 5);
+        consultNumberMapGen(map, 6);
+    }
+
+    private void consultNumberMapGen(Map<?, String> map, Integer number){
+        for (Map.Entry<?, String> key : map.entrySet()){
+            /**if (key.getKey().getNumber().equals(number)){
+                System.out.println("Number: " + key.getKey().getNumber() +
+                        ", Spanish: " + key.getValue() + ", English: " + key.getKey().getNameEnglish());
+                return;
+            }**/
+            //Number n;
+            System.out.println("1. *********************************************");
+            //System.out.println(key.getKey().getClass());
+            System.out.println(key.getValue());
+            System.out.println("1.1 *********************************************");
+        }
+        System.out.println("No fue encontrado el numero: " + number);
+        System.out.println("2. *********************************************");
+    }
+
     public static void main(String[] args) {
         Collections collections = new Collections();
         System.out.println("--------1. Lista de Objetos Circle--------");
@@ -144,6 +182,8 @@ public class Collections {
         collections.testMaps();
         System.out.println("--------3. Mapa de Numeros--------");
         collections.testNumbers();
+        //System.out.println("--------3.1. Mapa de Numeros con Wildcars--------");
+        //collections.testNumbersGen();
     }
 
 }
