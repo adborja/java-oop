@@ -3,6 +3,7 @@ package com.edu.cedesistemas.oop.model.geometry;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class ShapeSample {
     public static void main(String[] args) {
@@ -24,10 +25,10 @@ public class ShapeSample {
         System.out.println("after sorting: " + circles);
 
         // Scaler sample (generics)...
-        /*
+
         Circle scaledCircle = ShapeScaler.scale(circle1, 50);
         System.out.println("scaled circle: " + scaledCircle);
-        */
+
 
     }
 }
