@@ -17,7 +17,7 @@ public class Ellipse implements Shape {
     public double getB(){
         return b;
     }
-
+    //TO_DO:Implementar equals y hascode
 
     @Override
     public double area() {
