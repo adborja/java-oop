@@ -23,4 +23,9 @@ public class Circle extends Ellipse implements Scalable<Circle> {
     public String toString() {
         return "circle {radius: " + getRadius() + "}";
     }
+
+    @Override
+    public Circle scale(Number percentage) {
+        return null;
+    }
 }

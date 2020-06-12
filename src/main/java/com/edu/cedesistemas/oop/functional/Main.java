@@ -30,6 +30,7 @@ public class Main {
         Circle circle = new Circle(30);
         // ************ CAMBIAR ESTAS LINEAS POR EXPRESION LAMBDA **********************
         ShapeMultiplier<Circle, Double> shapeMultiplier = new ShapeMultiplierImpl<>();
+
         Circle newCircle = shapeMultiplier.multiply(circle, 200D);
         double area = newCircle.area();
         System.out.println("new area: " + area);
