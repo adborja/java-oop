@@ -1,10 +1,12 @@
 package com.edu.cedesistemas.oop.arrays;
 
+import static com.edu.cedesistemas.oop.arrays.ArrayUtils.bubbleSort;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.arrayContaining;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 
+import org.hamcrest.MatcherAssert;
 import org.junit.Test;
 
 import java.util.Arrays;
@@ -28,7 +30,7 @@ public class ArrayUtilsTest {
     @Test
     public void testBubbleSort() {
         Integer[] array = {5, 9, 6, 1, 10, 4};
-        ArrayUtils.bubbleSort(array);
+        bubbleSort(array);
         assertThat(array, arrayContaining(1, 4, 5, 6, 9, 10));
     }
 

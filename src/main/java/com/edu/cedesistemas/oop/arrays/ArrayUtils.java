@@ -9,38 +9,36 @@ public final class ArrayUtils {
     // Lesson 2 - - arrays
     public static void bubbleSort(Integer[] array) {
         boolean swapped = true;
-        int i= 0;
-        int tmp = 0;
+        int i;
+        int tmp;
 
         while (swapped) {
             swapped = false;
-            i++;
-            for (i = 0; i < array.length; i++){
-                if (array[i] > array[i + 1]){
+            for (i = 0; i < array.length; i++)
+                if (array[i] > array[i + 1]) {
                     tmp = array[i];
                     array[i] = array[i + 1];
                     array[i + 1] = tmp;
                     swapped = true;
                 }
-            }
         }
     }
 
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
-            int i = 0;
+            int i;
             int sum = 0;
-            for(i=1; i<=list.length; i++){
-
+            for(i=1; i<=list.size(); i++){
+                sum += list.get(i);
             }
-        return 0;
+        return sum;
     }
 
     // Lesson 2 -- ArrayList
     public static List<Integer> getPrimeNumbers(int limit) {
         ArrayList<Integer> listaresultado = new ArrayList<>();
-        int i = 0;
-        int num = 0;
+        int i ;
+        int num;
         for (i = 1; i <= limit; i++){
             int counter = 0;
             for(num = i; num >= 1; num--){
