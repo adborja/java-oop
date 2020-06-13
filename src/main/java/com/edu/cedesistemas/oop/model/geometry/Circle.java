@@ -1,6 +1,6 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-public class Circle extends Ellipse implements Scalable, ComparableShape {
+public class Circle extends Ellipse implements Scalable<Scalable, Number>, ComparableShape {
     public Circle(double radius) {
         super(radius, radius);
     }
