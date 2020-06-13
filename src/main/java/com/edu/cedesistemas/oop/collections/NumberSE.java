@@ -2,11 +2,11 @@ package com.edu.cedesistemas.oop.collections;
 
 import java.util.Objects;
 
-public class Number {
+public class NumberSE {
     private final Integer number;
     private final String nameSpanish;
     private final String nameEnglish;
-    public Number(Integer number, String nameSpanish, String nameEnglish){
+    public NumberSE(Integer number, String nameSpanish, String nameEnglish){
         this.number = number;
         this.nameSpanish = nameSpanish;
         this.nameEnglish =nameEnglish;
@@ -28,7 +28,7 @@ public class Number {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Number number1 = (Number) o;
+        NumberSE number1 = (NumberSE) o;
         return number.equals(number1.number);
     }
 

@@ -1,9 +1,7 @@
 package com.edu.cedesistemas.oop.collections;
 
 import com.edu.cedesistemas.oop.model.geometry.Circle;
-import com.edu.cedesistemas.oop.model.vehicles.ElectricCar;
 
-import java.awt.font.NumericShaper;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -95,33 +93,33 @@ public class Collections  {
      Punto 3. Map Number
      **/
 
-    public Map<Number, String> loadMapNumber(List<Number> numbers){
-        Map<Number, String> map = new HashMap<Number, String>();
-        for (Number n: numbers){
+    public Map<NumberSE, String> loadMapNumber(List<NumberSE> numbers){
+        Map<NumberSE, String> map = new HashMap<NumberSE, String>();
+        for (NumberSE n: numbers){
             map.put(n , n.getNameSpanish());
         }
         return map;
     }
 
-    private List<Number> getNumbers(){
-        List<Number> numbers = new ArrayList<>();
-        Number n = new Number(1, "Uno", "One");
+    private List<NumberSE> getNumbers(){
+        List<NumberSE> numbers = new ArrayList<>();
+        NumberSE n = new NumberSE(1, "Uno", "One");
         numbers.add(n);
-        n = new Number(2, "Dos", "Two");
+        n = new NumberSE(2, "Dos", "Two");
         numbers.add(n);
-        n = new Number(3, "Tres", "Three");
+        n = new NumberSE(3, "Tres", "Three");
         numbers.add(n);
-        n = new Number(3, "Tres", "Three");
+        n = new NumberSE(3, "Tres", "Three");
         numbers.add(n);
-        n = new Number(4, "Cuatro", "Four");
+        n = new NumberSE(4, "Cuatro", "Four");
         numbers.add(n);
-        n = new Number(5, "Cinco", "Five");
+        n = new NumberSE(5, "Cinco", "Five");
         numbers.add(n);
         return numbers;
     }
 
-    private void consultNumberMap(Map<Number, String> map, Integer number){
-        for (Map.Entry<Number, String> key : map.entrySet()){
+    private void consultNumberMap(Map<NumberSE, String> map, Integer number){
+        for (Map.Entry<NumberSE, String> key : map.entrySet()){
             if (key.getKey().getNumber().equals(number)){
                 System.out.println("Number: " + key.getKey().getNumber() +
                         ", Spanish: " + key.getValue() + ", English: " + key.getKey().getNameEnglish());
@@ -132,7 +130,7 @@ public class Collections  {
     }
 
     public void testNumbers(){
-        Map<Number, String> map = loadMapNumber(getNumbers());
+        Map<NumberSE, String> map = loadMapNumber(getNumbers());
         consultNumberMap(map, 1);
         consultNumberMap(map, 2);
         consultNumberMap(map, 8);
