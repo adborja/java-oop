@@ -38,7 +38,8 @@ public class Rectangle implements Shape{
 
     @Override
     public double area() {
-        return 0;
+        System.out.println(height * width);
+        return height * width;
     }
 
     @Override

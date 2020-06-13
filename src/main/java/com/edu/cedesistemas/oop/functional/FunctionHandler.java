@@ -1,5 +1,7 @@
 package com.edu.cedesistemas.oop.functional;
 
+import com.edu.cedesistemas.oop.model.geometry.Point;
+import com.edu.cedesistemas.oop.model.geometry.Rectangle;
 import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 
@@ -10,7 +12,7 @@ import java.util.function.Function;
 
 public class FunctionHandler {
     public static <T, R> R applyFunction(Function<T, R> f, T t) {
-        return null;
+        return f.apply(t);
     }
 
     public static <T extends Scalable<T, U>, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
