@@ -1,9 +1,16 @@
-package com.edu.cedesistemas.oop.model.vehicle;
+package com.edu.cedesistemas.oop.model.vehicle.race;
+
+import com.edu.cedesistemas.oop.model.vehicle.Car;
+import com.edu.cedesistemas.oop.model.vehicle.DieselCar;
+import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
+import com.edu.cedesistemas.oop.model.vehicle.FuelCar;
+import com.edu.cedesistemas.oop.model.vehicle.Truck;
+import com.edu.cedesistemas.oop.model.vehicle.Workshop;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class MainWorkshop {
 
     public static void main(String[] args) {
         int i = 0;
