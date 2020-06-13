@@ -15,4 +15,6 @@ public class ElectricCar extends Car {
     public void power() {
         System.out.println("car powering up using batteries");
     }
+
+
 }

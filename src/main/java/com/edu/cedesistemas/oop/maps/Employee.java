@@ -1,7 +1,7 @@
 package com.edu.cedesistemas.oop.maps;
 
 import java.util.Objects;
-
+//Taller Lección 4 – Collections, Ejercicio 2
 public class Employee {
     private final String id;
     private final String name;

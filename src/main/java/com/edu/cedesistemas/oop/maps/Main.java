@@ -2,7 +2,7 @@ package com.edu.cedesistemas.oop.maps;
 
 import java.util.HashMap;
 import java.util.Map;
-
+//Taller Lección 4 – Collections, Ejercicio 2
 public class Main {
     public static void main(String[] args) {
         Employee e1 = new Employee("A1234", "Pedro Sarmiento");

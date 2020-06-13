@@ -5,7 +5,7 @@ import com.edu.cedesistemas.oop.model.geometry.Circle;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-
+//Taller Lección 4 – Collections, Ejercicio 1
 public class CircleList {
 
     public static void main(String[] args) {

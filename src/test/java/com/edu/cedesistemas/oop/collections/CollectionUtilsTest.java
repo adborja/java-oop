@@ -29,8 +29,6 @@ public class CollectionUtilsTest {
 
         // Creando una lista de figuras ...
         Collection<Shape> shapes = Arrays.asList(s1, s2, s3, s4, s5, s6);
-        System.out.println("S1: " + s1);
-        System.out.println("Shape: " + shapes);
         // Removiendo duplicados: Una elipse es igual a otra siempre y cuando los valores de a y de b sean iguales
         Set<Shape> shapesResult = CollectionUtils.removeDuplicates(shapes);
         // Verificando que se hayan eliminado las figuras repetidas sin importar el order
