@@ -37,5 +37,6 @@ public class Main {
 
         // INSERTE EXPRESION LAMBDA ACA PARA OBTENER EL MISMO RESULTADO
         // ....
+        ShapeMultiplier<Circle, Double> shapeMultiplierLamda = (circle,200) -> (circle,200);
     }
 }
