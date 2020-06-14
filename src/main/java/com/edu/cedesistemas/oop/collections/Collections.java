@@ -1,6 +1,7 @@
 package com.edu.cedesistemas.oop.collections;
 
 import com.edu.cedesistemas.oop.model.geometry.Circle;
+import com.edu.cedesistemas.oop.model.vehicles.Workshop;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -149,6 +150,7 @@ public class Collections  {
         collections.testMaps();
         System.out.println("--------3. Mapa de Numeros--------");
         collections.testNumbers();
+        System.out.println("--------4. Pruebas Pendientes--------");
     }
 
 }
