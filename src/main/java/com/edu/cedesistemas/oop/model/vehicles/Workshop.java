@@ -28,20 +28,43 @@ public class Workshop <C extends Car>{
         System.out.println("Carro: " + car.getName() + " >>> Agregado a lista de carros Entregados");
     }
 
-    public void Testworkshop(){
+    public void testWorkshopElMecanico(){
+        System.out.println();
+        System.out.println("------------> Nombre Taller: " + name + " <------------");
+        System.out.println();
         C carElectrico = (C) new ElectricCar(50, "Mazda", "Car Electric");
         repair(carElectrico);
         C carDiesel = (C) new DieselCar(30, "Ford", "Diesel Car");
         repair(carDiesel);
         C carFuel = (C) new FuelCar(30, "Toyota","Car Fuel");
         repair(carFuel);
-        System.out.println();
-        System.out.println("------------> Nombre Taller: " + this.name + " <------------");
-        System.out.println();
-        System.out.println(">>> Nro de Carros en REPARACIÓN: " + listaCarrosReparacion.size());
-        System.out.println(">>> Nro de Carros ENTREGADOS: " + listaCarrosEntregados.size());
-        System.out.println();
+        showStateWorksshop();
         deliver(carDiesel);
+        showStateWorksshop();
+    }
+
+    public void testWorkshopTodoCarros(){
+        System.out.println();
+        System.out.println("------------> Nombre Taller: " + name + " <------------");
+        System.out.println();
+        C carElectrico = (C) new ElectricCar(50, "Mazda", "Car Electric");
+        repair(carElectrico);
+        C carDiesel = (C) new DieselCar(30, "Ford", "Diesel Car");
+        repair(carDiesel);
+        C carFuel = (C) new FuelCar(30, "Toyota","Car Fuel");
+        repair(carFuel);
+        C carFuel2 = (C) new FuelCar(40, "Nissan","Car Fuel");
+        repair(carFuel2);
+        showStateWorksshop();
+        deliver(carDiesel);
+        deliver(carElectrico);
+        showStateWorksshop();
+        C carDiesel2 = (C) new DieselCar(50, "International", "Diesel Car");
+        repair(carDiesel2);
+        showStateWorksshop();
+    }
+
+    public void showStateWorksshop(){
         System.out.println();
         System.out.println(">>> Nro de Carros en REPARACIÓN: " + listaCarrosReparacion.size());
         System.out.println(">>> Nro de Carros ENTREGADOS: " + listaCarrosEntregados.size());
@@ -52,12 +75,11 @@ public class Workshop <C extends Car>{
         List<Car> r = new ArrayList<>();
         List<Car> e = new ArrayList<>();
         Workshop workshop = new Workshop("El Buen Mecanico", r, e);
-        workshop.Testworkshop();
+        workshop.testWorkshopElMecanico();
 
         List<Car> r2 = new ArrayList<>();
         List<Car> e2 = new ArrayList<>();
         Workshop workshop2 = new Workshop("Todo Carros", r2, e2);
-        workshop2.Testworkshop();
-
+        workshop2.testWorkshopTodoCarros();
     }
 }
