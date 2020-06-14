@@ -1,6 +1,5 @@
 package com.edu.cedesistemas.oop.generics;
 
-import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
@@ -36,33 +35,57 @@ public class Sorter {
     }
 
     // Implement generic mergeSort
-    public static <T extends Comparable<T>>void mergeSort(List<T> A, int izq, int der){
-        if (izq < der){
-            int m=(izq+der)/2;
-            mergeSort(A,izq, m);
-            mergeSort(A,m+1, der);
-            merge(A,izq, m, der);
+    //Método de ordenamiento principal
+    public static <T extends Comparable<? super T>>void mergeSort(T[] array, int first, int last)
+    {
+        if (first < last)
+        {
+            int middle = (first + last) / 2; //busca el punto medio
+            mergeSort(array, first, middle); // ordena la primera mitad
+            mergeSort(array, middle + 1, last);  //ordena la segunda mitad
+            merge(array, first, middle, last); //fisionar las mitades ordenadas
         }
     }
 
-    public static <T extends Comparable<T>>void merge(List<T> A,int izq, int m, int der){
-        int i, j, k;
-        List<T> B = new ArrayList<>(A.size());
-        //int [] B = new int[A.length]; //array auxiliar
+    // Unir dos matrices de array[].
+    public static <T extends Comparable<? super T>>void merge(T[] array, int first, int middle, int last)
+    {
+        T[] leftArray  = (T[]) new Comparable[middle - first + 1];
+        T[] rightArray = (T[]) new Comparable[last - middle];
 
-        for (i=izq; i<=der; i++)      //copia ambas mitades en el array auxiliar
-            // B[i]=A[i];
-            B.add(A.get(i));
+        // Llenar matriz izquierda
+        for (int i = 0; i < leftArray.length; ++i)
+            leftArray[i] = array[first + i];
 
-        i=izq; j=m+1; k=izq;
+        // Llenar matriz derecha
+        for (int i = 0; i < rightArray.length; ++i)
+            rightArray[i] = array[middle + 1 + i];
 
-/*        while (i<=m && j<=der) //copia el siguiente elemento más grande
-            // if (B[i]<=B[j])
-            if(B.get(i). B.get(j))
-                A[k++]=B[i++];
-            else
-                A[k++]=B[j++];
+        /* Unir matrices temporales */
+        // índices iniciales de primera y segunda submatrices
+        int leftIndex = 0, rightIndex = 0;
 
-        while (i<=m)         //copia los elementos que quedan de la
-            A[k++]=B[i++]; //primera mitad (si los hay)*/
+        //el índice al que vamos a agregar primero las submatrices a la matriz principal
+        int currentIndex = first;
+
+        //compare cada índice de las submatrices agregando el valor más bajo al índice actual
+        while (leftIndex < leftArray.length && rightIndex < rightArray.length)
+        {
+            if (leftArray[leftIndex].compareTo(rightArray[rightIndex]) <= 0) {
+                array[currentIndex] = leftArray[leftIndex];
+                leftIndex++;
+            }
+            else {
+                array[currentIndex] = rightArray[rightIndex];
+                rightIndex++;
+            }
+            currentIndex++;
+        }
+
+        // copie los elementos restantes de leftArray [] si los hay
+        while (leftIndex < leftArray.length) array[currentIndex++] = leftArray[leftIndex++];
+
+        //copie los elementos restantes de rightArray [] si los hay
+        while (rightIndex < rightArray.length) array[currentIndex++] = rightArray[rightIndex++];
+    }
 }

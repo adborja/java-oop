@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
-public class ShapeSample {
+public class ShapeSample{
     public static void main(String[] args) {
         Circle circle1 = new Circle(10);
         Circle circle2 = new Circle(5);

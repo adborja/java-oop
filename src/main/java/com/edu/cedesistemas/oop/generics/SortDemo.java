@@ -12,7 +12,10 @@ import java.util.Arrays;
 import java.util.List;
 
 public class SortDemo {
+
     public static void main(String[] args) {
+
+
         List<Integer> integers = new ArrayList<>(Arrays.asList(3, 8, 6, 4, 9, 2, 5, 1, 7));
         System.out.println("before sort integers: " + integers);
         Sorter.bubbleSort(integers);
@@ -45,6 +48,16 @@ public class SortDemo {
         System.out.println("before sort points: " + points);
         Sorter.bubbleSort(points, reversePointComparator);
         System.out.println("after sort points: " + points);
+
+
+       //MergeSort
+        String[] arrayOfStrings = {"Juan","Pedro","Luz","Ana","Yenifer","Elena"};
+        Sorter.mergeSort(arrayOfStrings, 0, arrayOfStrings.length -1);
+        System.out.println(java.util.Arrays.toString(arrayOfStrings));
+
+        Double[] arrayOfDoubles = {0.25, 0.01, 0.46, 0.22, 0.27, 0.39, 0.41, 0.13, 0.31, 0.72, 0.15};
+        Sorter.mergeSort(arrayOfDoubles, 0, arrayOfDoubles.length - 1);
+        System.out.println(java.util.Arrays.toString(arrayOfDoubles));
 
     }
 }

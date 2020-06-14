@@ -21,7 +21,6 @@ public class GenericPoint <T extends Number> {
     public <N extends Number> double distance(GenericPoint<N> p1, GenericPoint<T> p2){
         return Math.sqrt(Math.pow(p1.x.intValue() - p2.x.intValue(),2)
         + Math.pow(p1.y.intValue() - p2.y.intValue(),2));
-        //return 0;
     }
 
     public static <T extends Number> GenericPoint<T> of(T x, T y){
