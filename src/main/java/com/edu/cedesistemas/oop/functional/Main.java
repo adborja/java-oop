@@ -31,8 +31,8 @@ public class Main {
         // ************ CAMBIAR ESTAS LINEAS POR EXPRESION LAMBDA **********************
         //ShapeMultiplier<Circle, Double> shapeMultiplier = new ShapeMultiplierImpl<>();
 
-        ShapeMultiplier<Circle, Double> shareMultiplier = (scalable, value) -> scalable.scale(value);
-        Circle newCircle = shapeMultiplier.multiply(circle, 200D);
+        ShapeMultiplier<Circle, Double> shareMultiplier = (scalable, value) -> (Circle) scalable.scale(value);
+        Circle newCircle = shareMultiplier.multiply(circle, (double) 60);//pendiente resolver
         double area = newCircle.area();
         System.out.println("new area: " + area);
 

@@ -20,7 +20,8 @@ public class ShapeSample {
         CircleRadiusComparator radiusComparator = new CircleRadiusComparator();
         System.out.println("before sorting: " + circles);
         //Collections.sort(circles, radiusComparator);
-        Collections.sort(circles);
+
+        //Collections.sort(circles); //pendiente resolver
         System.out.println("after sorting: " + circles);
 
         // Scaler sample (generics)...

@@ -13,7 +13,7 @@ public class FunctionHandler {
         return null;
     }
 
-    public static <T extends Scalable<T, U>, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
+    public static <T extends Scalable, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
         return null;
     }
 
