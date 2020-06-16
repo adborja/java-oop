@@ -10,6 +10,8 @@ import java.util.function.Function;
 
 public class FunctionHandler {
     public static <T, R> R applyFunction(Function<T, R> f, T t) {
+        System.out.println("Hola");
+        System.out.println(t.equals(t));
         return null;
     }
 
