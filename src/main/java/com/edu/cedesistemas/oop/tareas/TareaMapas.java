@@ -22,6 +22,8 @@ public class TareaMapas {
           System.out.println("\n" + x.getID()+ " - "+ y);
         });
 
+        System.out.println("\n" + m.size() + " tamaño mapa");
+
     }
 
     public void numerosEnteros (Map<String,String> a, int numero) {

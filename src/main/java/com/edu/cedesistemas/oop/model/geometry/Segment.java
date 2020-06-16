@@ -39,4 +39,9 @@ public class Segment implements Shape{
     public double perimeter() {
         return 1;
     }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

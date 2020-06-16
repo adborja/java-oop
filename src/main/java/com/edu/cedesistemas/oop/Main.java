@@ -17,6 +17,7 @@ public class Main {
         a.listCircles();
         List<Employee> c = new ArrayList<>();
 
+        c.add(new Employee("A1234","prueba repetido"));
         c.add(new Employee("A1234","Pedro Sarmiento"));
         c.add(new Employee("A1235","Juan Muñoz"));
         c.add(new Employee("A1236","Clara Mendez"));

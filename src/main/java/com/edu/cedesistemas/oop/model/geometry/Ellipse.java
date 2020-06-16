@@ -26,4 +26,9 @@ public class Ellipse implements Shape {
     public double perimeter() {
         return 2 * Math.PI * Math.sqrt((Math.pow(a, 2) + Math.pow(b, 2)) / 2);
     }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
 }

@@ -43,11 +43,18 @@ public class Rectangle implements Shape{
 
     @Override
     public double area() {
-        return (Math.PI * height * width);
+        //return (Math.PI * height * width);
+        return height * width;
     }
 
     @Override
     public double perimeter() {
         return (2 * Math.PI * Math.sqrt((Math.pow(height, 2) + Math.pow(width, 2)) / 2));
     }
+
+    @Override
+    public int compareTo(Object o) {
+        return 0;
+    }
+
 }
