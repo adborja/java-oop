@@ -43,7 +43,28 @@ public class Workshop <C extends Car>{
         showStateWorksshop();
     }
 
-    public void testWorkshopTodoCarros(){
+    public void testWorkshopTodoCarros() {
+        System.out.println();
+        System.out.println("------------> Nombre Taller: " + name + " <------------");
+        System.out.println();
+        C carElectrico = (C) new ElectricCar(50, "Mazda", "Car Electric");
+        repair(carElectrico);
+        C carDiesel = (C) new DieselCar(30, "Ford", "Diesel Car");
+        repair(carDiesel);
+        C carFuel = (C) new FuelCar(30, "Toyota", "Car Fuel");
+        repair(carFuel);
+        C carFuel2 = (C) new FuelCar(40, "Nissan", "Car Fuel");
+        repair(carFuel2);
+        showStateWorksshop();
+        deliver(carDiesel);
+        deliver(carElectrico);
+        showStateWorksshop();
+        C carDiesel2 = (C) new DieselCar(50, "International", "Diesel Car");
+        repair(carDiesel2);
+        showStateWorksshop();
+    }
+
+    public void testWorkshopOnlyElectricCar(){
         System.out.println();
         System.out.println("------------> Nombre Taller: " + name + " <------------");
         System.out.println();
@@ -52,15 +73,9 @@ public class Workshop <C extends Car>{
         C carDiesel = (C) new DieselCar(30, "Ford", "Diesel Car");
         repair(carDiesel);
         C carFuel = (C) new FuelCar(30, "Toyota","Car Fuel");
-        repair(carFuel);
-        C carFuel2 = (C) new FuelCar(40, "Nissan","Car Fuel");
-        repair(carFuel2);
         showStateWorksshop();
         deliver(carDiesel);
         deliver(carElectrico);
-        showStateWorksshop();
-        C carDiesel2 = (C) new DieselCar(50, "International", "Diesel Car");
-        repair(carDiesel2);
         showStateWorksshop();
     }
 
@@ -72,14 +87,19 @@ public class Workshop <C extends Car>{
     }
 
     public static void main(String[] args) {
-        List<Car> r = new ArrayList<>();
-        List<Car> e = new ArrayList<>();
-        Workshop workshop = new Workshop("El Buen Mecanico", r, e);
-        workshop.testWorkshopElMecanico();
+        List<Car> r1 = new ArrayList<>();
+        List<Car> e1 = new ArrayList<>();
+        Workshop workshop1 = new Workshop("El Buen Mecanico", r1, e1);
+        workshop1.testWorkshopElMecanico();
 
         List<Car> r2 = new ArrayList<>();
         List<Car> e2 = new ArrayList<>();
         Workshop workshop2 = new Workshop("Todo Carros", r2, e2);
         workshop2.testWorkshopTodoCarros();
+
+        List<ElectricCar> r3 = new ArrayList<>();
+        List<ElectricCar> e3 = new ArrayList<>();
+        Workshop workshop3 = new Workshop("Electric Car Taller", r3, e3);
+        workshop3.testWorkshopOnlyElectricCar();
     }
 }
