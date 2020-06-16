@@ -5,9 +5,9 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args){
-        ElictricCar electricar1 = new ElictricCar(20,"renault","electrico");
-        ElictricCar electricar2 = new ElictricCar(30,"renault1","electrico");
-        ElictricCar electricar3 = new ElictricCar(10,"renault2","electrico");
+        ElictricCar electricar1 = new ElictricCar(20,"toyota","electrico");
+        ElictricCar electricar2 = new ElictricCar(30,"renault","electrico");
+        ElictricCar electricar3 = new ElictricCar(10,"mazda","electrico");
         FuelCar fuelCar = new FuelCar(10,"toyotaElec","electrico");
 
         List<ElictricCar> listaReparacion = new ArrayList();
@@ -21,6 +21,9 @@ public class Main {
         workshop.repair(electricar2);
         workshop.repair(electricar3);
         //workshop.repair(fuelCar); // valida efectivamente que es un car electrico
+
+        workshop.carrosReparacion();
+        workshop.carrosEntregados();
 
     }
 }
