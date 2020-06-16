@@ -1,7 +1,7 @@
 package com.edu.cedesistemas.oop.collections;
 
 // Lesson 3 -- Generics
-public class Stack<E> {
+public class Stack<E> implements Comparable<E> {
     private final int size;
     private int top;
 
@@ -34,6 +34,11 @@ public class Stack<E> {
             throw new RuntimeException("stack is empty");
         }
         return elements[top--];
+    }
+
+    @Override
+    public int compareTo(E e) {
+        return 0;
     }
 
     public static void main(String[] args) {
