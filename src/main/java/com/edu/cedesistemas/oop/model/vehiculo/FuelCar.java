@@ -11,6 +11,11 @@ public class FuelCar extends Car{
     }
 
     @Override
+    public boolean getLastMaintenanceDate() {
+        return false;
+    }
+
+    @Override
     public void power() {
     System.out.println("Encender fuelcar");
     }
