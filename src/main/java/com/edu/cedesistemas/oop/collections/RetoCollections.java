@@ -18,7 +18,7 @@ public class RetoCollections{
         collections.listCircles();
         Map<Employee, String> eMap = collections.fillEmployeeMap(collections.fillEmployeeList());
         collections.viewEMap(eMap);
-        Map<NumberIE, String> nMap = collections.fillNumberMap(collections.fillListNumberName());
+        Map<NumberIE, String> nMap = collections.fillNumberIEMap(collections.fillNumberIEList());
         collections.viewNMap(nMap);
     }
 
@@ -70,7 +70,7 @@ public class RetoCollections{
 
     //Numbers
     //Llenar la lista de NumberIE
-    private List<NumberIE> fillListNumberName(){
+    private List<NumberIE> fillNumberIEList(){
         List<NumberIE> numberIEList = new ArrayList<>();
         numberIEList.add(new NumberIE(1,"Uno", "One"));
         numberIEList.add(new NumberIE(2, "Dos", "Two"));
@@ -80,21 +80,21 @@ public class RetoCollections{
     }
 
     //Llenar el mapa con clave tipo NumberIE y valor tipo String
-    public Map<NumberIE, String> fillNumberMap(List<NumberIE> numberIEList){
-        Map<NumberIE, String> numberNameMap = new HashMap<>();
+    public Map<NumberIE, String> fillNumberIEMap(List<NumberIE> numberIEList){
+        Map<NumberIE, String> numberIEMap = new HashMap<>();
         for (NumberIE n: numberIEList){
-            numberNameMap.put(n, n.getNameSpanish());
+            numberIEMap.put(n, n.getNameSpanish());
         }
-        return numberNameMap;
+        return numberIEMap;
     }
 
     //Visualizar el mapa de NumberIE (Usando Map.Entry)
-    public void viewNMap(Map<NumberIE, String> numberNameMap) {
+    public void viewNMap(Map<NumberIE, String> numberIE) {
         System.out.println("-----------Mapa Números--------------");
-        for (Map.Entry<NumberIE, String> n : numberNameMap.entrySet()) {
+        for (Map.Entry<NumberIE, String> n : numberIE.entrySet()) {
             System.out.println("Numero: " + n.getKey().getNumber() + " Español: " + n.getKey().getNameSpanish()
                     +" Inglés: " + n.getKey().getNameEnglish());
         }
-        System.out.println("Cantidad Números: " + numberNameMap.size());
+        System.out.println("Cantidad Números: " + numberIE.size());
     }
 }
