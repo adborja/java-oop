@@ -1,20 +1,31 @@
 package com.edu.cedesistemas.oop.collections;
 
 import com.edu.cedesistemas.oop.model.Employee;
+<<<<<<< HEAD
 import com.edu.cedesistemas.oop.model.geometry.Shape;
 import com.sun.javafx.collections.MappingChange;
+=======
+>>>>>>> 362d7d74e76413dced2ba44ba6dae5d4c7f9ab4b
 
 import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
+<<<<<<< HEAD
     public static void  main(String[] args){
+=======
+    public static void main(String[] args) {
+>>>>>>> 362d7d74e76413dced2ba44ba6dae5d4c7f9ab4b
         Employee e1 = new Employee("A1234", "Pedro Sarmiento");
         Employee e2 = new Employee("A1235", "Juan Muñoz");
         Employee e3 = new Employee("A1236", "Clara Mendez");
         Employee e4 = new Employee("A1237", "Jorge Perdomo");
+<<<<<<< HEAD
         Employee e5 = new Employee("A1238", "Maria Nuñez");
         Employee e6 = new Employee("A1238", "Maria velez");
+=======
+        Employee e5 = new Employee("A1238", "María Nuñez");
+>>>>>>> 362d7d74e76413dced2ba44ba6dae5d4c7f9ab4b
 
         Map<Employee, String> employeeMap = new HashMap<>();
         employeeMap.put(e1, e1.getName());
@@ -22,6 +33,7 @@ public class Main {
         employeeMap.put(e3, e3.getName());
         employeeMap.put(e4, e4.getName());
         employeeMap.put(e5, e5.getName());
+<<<<<<< HEAD
         employeeMap.put(e6, e6.getName());
 
         System.out.println(employeeMap.size());
@@ -47,3 +59,14 @@ public class Main {
     }
 
     }
+=======
+
+        System.out.println(employeeMap.size());
+
+        Employee e6 = new Employee("A1234", "Carlos Fuentes");
+        employeeMap.put(e6, e6.getName());
+
+        System.out.println("Nuevo tamaño: " + employeeMap.size());
+    }
+}
+>>>>>>> 362d7d74e76413dced2ba44ba6dae5d4c7f9ab4b
