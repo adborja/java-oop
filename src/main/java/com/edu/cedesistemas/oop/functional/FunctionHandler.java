@@ -10,20 +10,19 @@ import java.util.function.Function;
 
 public class FunctionHandler {
     public static <T, R> R applyFunction(Function<T, R> f, T t) {
-        System.out.println("Hola");
-        System.out.println(t.equals(t));
-        return null;
+        return f.apply(t);
     }
 
     public static <T extends Scalable, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
-        return null;
+        return f.multiply(shape, value);
     }
 
     public static  <T> void consume(Consumer<List<T>> consumer, List<T> list) {
-
+        consumer.accept(list);
     }
 
     public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
+        //return car -> listToMap(cars);
         return null;
     }
 }
