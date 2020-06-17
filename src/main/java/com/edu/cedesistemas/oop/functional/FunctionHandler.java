@@ -11,7 +11,7 @@ import java.util.Map;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class FunctionHandler {
+    public class FunctionHandler {
     public static <T, R> R applyFunction(Function<T, R> f, T t) {
         return f.apply(t);
     }
