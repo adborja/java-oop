@@ -40,11 +40,11 @@ public class Rectangle implements  Shape {
 
     @Override
     public double area() {
-        return 0;
+        return getHeight() * getWidth();
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return 2 * (getHeight() + getWidth());
     }
 }

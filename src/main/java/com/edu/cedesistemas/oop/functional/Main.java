@@ -29,7 +29,9 @@ public class Main {
         // EJERCICIO:
         Circle circle = new Circle(30);
         // ************ CAMBIAR ESTAS LINEAS POR EXPRESION LAMBDA **********************
-        ShapeMultiplier<Circle, Double> shapeMultiplier = new ShapeMultiplierImpl<>();
+        //ShapeMultiplier<Circle, Double> shapeMultiplier = new ShapeMultiplierImpl<>();
+        ShapeMultiplier<Circle,Double> shapeMultiplier =(sc,v) ->sc.scale(v);
+
         Circle newCircle = shapeMultiplier.multiply(circle, 200D);
         double area = newCircle.area();
         System.out.println("new area: " + area);
@@ -37,5 +39,8 @@ public class Main {
 
         // INSERTE EXPRESION LAMBDA ACA PARA OBTENER EL MISMO RESULTADO
         // ....
+
+
+
     }
 }

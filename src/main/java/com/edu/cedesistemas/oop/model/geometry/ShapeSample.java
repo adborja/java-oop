@@ -25,10 +25,9 @@ public class ShapeSample {
         System.out.println("after sorting: " + circles);
 
         // Scaler sample (generics)...
-
+/*
         Circle scaledCircle = ShapeScaler.scale(circle1, 50);
-        System.out.println("scaled circle: " + scaledCircle);
-
+        System.out.println("scaled circle: " + scaledCircle);*/
 
     }
 }
