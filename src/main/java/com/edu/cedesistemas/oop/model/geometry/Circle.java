@@ -7,11 +7,11 @@ public class Circle extends Ellipse implements Scalable<Circle, Double>, Compara
 
     @Override
     public double perimeter() {
-        return 2 * Math.PI * a;
+        return 2 * Math.PI * getA();
     }
 
     public double getRadius() {
-        return a;
+        return getRadius();
     }
 
     @Override

@@ -24,6 +24,7 @@ public class FunctionHandler {
     }
 
     public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
+
         return null;
     }
 }
