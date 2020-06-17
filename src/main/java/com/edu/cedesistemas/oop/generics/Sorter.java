@@ -35,5 +35,4 @@ public class Sorter {
     }
 
     // Implement generic mergeSort
-
 }
