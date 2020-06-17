@@ -1,5 +1,7 @@
 package com.edu.cedesistemas.oop.collections;
 
+import java.util.Objects;
+
 public class Employee {
 
     private String name;
@@ -26,4 +28,16 @@ public class Employee {
         return Id;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Employee employee = (Employee) o;
+        return Id.equals(employee.Id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(Id);
+    }
 }
