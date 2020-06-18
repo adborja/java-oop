@@ -1,7 +1,7 @@
 package com.edu.cedesistemas.oop.streams;
 
-import com.edu.cedesistemas.oop.model.geometry.Scalable;
-import com.edu.cedesistemas.oop.model.geometry.Shape;
+import com.edu.cedesistemas.oop.model.geometryOK.Scalable;
+import com.edu.cedesistemas.oop.model.geometryOK.Shape;
 
 import java.util.List;
 import java.util.stream.Collectors;

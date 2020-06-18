@@ -4,10 +4,10 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 
-import com.edu.cedesistemas.oop.model.geometry.Circle;
-import com.edu.cedesistemas.oop.model.geometry.Point;
-import com.edu.cedesistemas.oop.model.geometry.Rectangle;
-import com.edu.cedesistemas.oop.model.geometry.Shape;
+import com.edu.cedesistemas.oop.model.geometryOK.Circle;
+import com.edu.cedesistemas.oop.model.geometryOK.Point;
+import com.edu.cedesistemas.oop.model.geometryOK.Rectangle;
+import com.edu.cedesistemas.oop.model.geometryOK.Shape;
 import org.junit.Test;
 
 import java.util.Arrays;
