@@ -5,9 +5,9 @@ import static org.hamcrest.Matchers.closeTo;
 import static org.hamcrest.Matchers.contains;
 import static org.hamcrest.Matchers.equalTo;
 
-import com.edu.cedesistemas.oop.model.geometry.Circle;
-import com.edu.cedesistemas.oop.model.geometry.Point;
-import com.edu.cedesistemas.oop.model.geometry.Rectangle;
+import com.edu.cedesistemas.oop.model.geometryOK.Circle;
+import com.edu.cedesistemas.oop.model.geometryOK.Point;
+import com.edu.cedesistemas.oop.model.geometryOK.Rectangle;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 import com.edu.cedesistemas.oop.model.vehicle.DieselCar;
 import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
@@ -27,7 +27,7 @@ public class FunctionHandlerTest {
     public void testGetArea() {
         double radius = 10;
         Circle circle = new Circle(radius);
-        ShapeMultiplier<Circle, Double> shapeMultiplier = (c, v) -> (Circle) c.scale(v);
+        ShapeMultiplier<Circle, Double> shapeMultiplier = (c, v) -> c.scale(v);
         Circle multiplied = FunctionHandler.getMultiplied(shapeMultiplier, circle, 200D);
         Double area = multiplied.area();
 
@@ -62,7 +62,7 @@ public class FunctionHandlerTest {
         Circle c4 = new Circle(12);
         List<Circle> circles = Arrays.asList(c1, c2, c3, c4);
 
-        Consumer<List<Circle>> sorter = (l) -> Collections.sort(l, Collections.reverseOrder());
+        Consumer<List<Circle>> sorter = l -> Collections.sort(l);
         FunctionHandler.consume(sorter, circles);
 
         assertThat(circles, contains(c3, c1, c4, c2));
