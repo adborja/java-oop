@@ -22,7 +22,7 @@ public class StreamDemo {
      * Retorna una lista de objetos escalables escalados por un valor especificado.
      *
      * @param scalables Lista de objetos escalables.
-     * @param value Valor numérico a escalar.
+     * @param value Valor numérico a escalar.   
      * @return Lista con objetos escalados
      * */
     public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value) {
