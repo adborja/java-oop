@@ -1,6 +1,6 @@
 package com.edu.cedesistemas.oop.streams;
 
-import com.edu.cedesistemas.oop.model.geometry.Scalable;
+import com.edu.cedesistemas.oop.model.geometryOK.Scalable;
 
 public class ScalableImpl implements Scalable<ScalableImpl, Double> {
     private final double v;

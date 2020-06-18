@@ -1,6 +1,6 @@
 package com.edu.cedesistemas.oop.streams;
 
-import com.edu.cedesistemas.oop.model.geometry.Circle;
+import com.edu.cedesistemas.oop.model.geometryOK.Circle;
 
 import java.util.Arrays;
 import java.util.List;
