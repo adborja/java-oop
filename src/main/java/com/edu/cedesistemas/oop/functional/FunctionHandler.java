@@ -16,15 +16,14 @@ import java.util.function.Function;
     }
 
     public static <T extends Scalable<T, U>, U extends Number> T getMultiplied(ShapeMultiplier<T, U> f, T shape, U value) {
-        return null;
+        return f.multiply(shape, value);
     }
 
     public static  <T> void consume(Consumer<List<T>> consumer, List<T> list) {
-
+        consumer.accept(list);
     }
 
     public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
-
         return null;
     }
 }
