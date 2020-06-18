@@ -1,31 +1,38 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
-import java.awt.*;
+// Lesson 1 -- Classes
+public class Rectangle implements Shape {
+    private final Point bl;
+    private final Point tr;
+    private final Point br;
+    private final Point tl;
+    private final double height;
+    private final double width;
 
-public class Rectangle implements Shape{
-    private Point bl;
-    private Point tr;
-    private Point br;
-    private double height;
-    private double width;
-
-    public Rectangle(Point pos, double height, double width) { //Por qué no tiene todos los campos Point en el constructor?
-
+    // Lesson 1 -- Constructores
+    public Rectangle(Point bl, double w, double h) {
+        this.bl = bl;
+        this.tl = Point.of(bl.getX(), bl.getY() + h);
+        this.br = Point.of(bl.getX() + w, bl.getY());
+        this.tr = Point.of(bl.getX() + w, bl.getY() + h);
+        this.height = h;
+        this.width = w;
     }
 
-    public Rectangle(Point bl, double size) {
-    }
-
-    public Point getBl() {
-        return bl;
-    }
-
-    public Point getTr() {
+    public Point getTopRight() {
         return tr;
     }
 
-    public Point getBr() {
+    public Point getBottomLeft() {
+        return bl;
+    }
+
+    public Point getBottomRight() {
         return br;
+    }
+
+    public Point getTopLeft() {
+        return tl;
     }
 
     public double getHeight() {
@@ -38,14 +45,11 @@ public class Rectangle implements Shape{
 
     @Override
     public double area() {
-        System.out.println("height: " + height);
-        System.out.println("width: " + width);
-        System.out.println("area: " + height * width);
-        return height * width;
+        return getHeight() * getWidth();
     }
 
     @Override
     public double perimeter() {
-        return 0;
+        return 2 * (getHeight() + getWidth());
     }
 }
