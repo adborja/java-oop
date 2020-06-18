@@ -26,6 +26,6 @@ public class StreamDemo {
      * @return Lista con objetos escalados
      * */
     public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value) {
-        return null;
+        return scalables.stream().map(s -> s.scale(value)).collect(Collectors.toList());
     }
 }
