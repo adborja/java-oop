@@ -1,7 +1,7 @@
 package com.edu.cedesistemas.oop.functional;
 
 import com.edu.cedesistemas.oop.generics.Sorter;
-import com.edu.cedesistemas.oop.model.geometry.Circle;
+import com.edu.cedesistemas.oop.model.geometryOK.Circle;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -30,16 +30,13 @@ public class Main {
         Circle circle = new Circle(30);
         // ************ CAMBIAR ESTAS LINEAS POR EXPRESION LAMBDA **********************
         //ShapeMultiplier<Circle, Double> shapeMultiplier = new ShapeMultiplierImpl<>();
-
-        ShapeMultiplier<Circle, Double> shareMultiplier = (scalable, value) -> (Circle) scalable.scale(value);
-        Circle newCircle = shareMultiplier.multiply(circle, (double) 60);//pendiente resolver
+        ShapeMultiplier<Circle, Double> shapeMultiplier = (scalable, value) -> scalable.scale(value);
+        Circle newCircle = shapeMultiplier.multiply(circle, 200D);
         double area = newCircle.area();
         System.out.println("new area: " + area);
-
         // *****************************************************************************
 
         // INSERTE EXPRESION LAMBDA ACA PARA OBTENER EL MISMO RESULTADO
-
         // ....
     }
 }
