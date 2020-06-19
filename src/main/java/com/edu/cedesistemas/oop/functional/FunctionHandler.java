@@ -4,6 +4,7 @@ import com.edu.cedesistemas.oop.model.geometryOK.Scalable;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 
 import java.lang.reflect.MalformedParameterizedTypeException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -23,11 +24,16 @@ public class FunctionHandler {
         consumer.accept(list);
     }
 
-    public static Map<String, List<Car>> getCars(List<Car> cars){
+    private static Map<String, List<Car>> getCars(List<Car> cars){
         Map<String, List<Car>> carMap = new HashMap<>();
-        for (int i = 0; i < cars.size(); i++){
-        {
-            carMap.put(cars.get(i).getName(), cars.get(i));
+        for (Car car : cars){
+            List<Car> listCar = new ArrayList<>();
+            for (Car car2: cars) {
+                if (car2.getName().equals(car.getName())) {
+                    listCar.add(car2);
+                    carMap.put(car.getName(), listCar);
+                }
+            }
         }
         return carMap;
     }

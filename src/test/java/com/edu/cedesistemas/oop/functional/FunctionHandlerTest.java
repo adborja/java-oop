@@ -86,6 +86,7 @@ public class FunctionHandlerTest {
         List<Car> cars = Arrays.asList(c1, c2, c3, c4, c5, c6, c7, c8, c9, c10);
 
         Map<String, List<Car>> result = function.apply(cars);
+
         assertThat(result.size(), equalTo(5));
         assertThat(result.get("mazda"), contains(c1, c4, c6));
         assertThat(result.get("renault"), contains(c2, c7));
