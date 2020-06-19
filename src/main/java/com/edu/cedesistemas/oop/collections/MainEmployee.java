@@ -24,5 +24,9 @@ public class MainEmployee {
 
         System.out.println(mp.size());
 
+        Employee e6 = new Employee("A1234", "Carlos Fuentes");
+        mp.put(e6, e6.getNombre());
+
+        System.out.println("Nuevo tamaño: " + mp.size());
     }
 }
