@@ -4,9 +4,9 @@ import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
 
-import com.edu.cedesistemas.oop.model.geometry.Circle;
-import com.edu.cedesistemas.oop.model.geometry.Ellipse;
-import com.edu.cedesistemas.oop.model.geometry.Shape;
+import com.edu.cedesistemas.oop.model.geometryOK.Circle;
+import com.edu.cedesistemas.oop.model.geometryOK.Ellipse;
+import com.edu.cedesistemas.oop.model.geometryOK.Shape;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 import com.edu.cedesistemas.oop.model.vehicle.ElectricCar;
 import org.junit.Test;
@@ -32,6 +32,7 @@ public class CollectionUtilsTest {
 
         // Removiendo duplicados: Una elipse es igual a otra siempre y cuando los valores de a y de b sean iguales
         Set<Shape> shapesResult = CollectionUtils.removeDuplicates(shapes);
+        System.out.println(shapesResult);
         // Verificando que se hayan eliminado las figuras repetidas sin importar el order
         assertThat(shapesResult, containsInAnyOrder(s1, s2, s3, s5)); // no importa el orden
 
