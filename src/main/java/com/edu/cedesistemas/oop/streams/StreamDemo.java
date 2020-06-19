@@ -3,6 +3,13 @@ package com.edu.cedesistemas.oop.streams;
 import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.geometry.Shape;
 
+
+import com.edu.cedesistemas.oop.model.geometry.scalable;
+import com.edu.cedesistemas.oop.model.geometry.Shape;
+import org.junit.Test;
+
+import java.util.Arrays;
+
 import java.util.List;
 
 public class StreamDemo {
@@ -13,9 +20,12 @@ public class StreamDemo {
      * @param shapes Lista de figuras
      * @return Lista filtrada con las figuras que tienen un área menor o igual a la especificada.
      * */
+
     public static List<? extends Shape> filterShapes(double areaLimit, List<? extends Shape> shapes) {
-        return null;
+
+      return shapes.stream().filter(s -> s.area() <= areaLimit).collect(Collectors.toList());
     }
+
 
     /**
      * Retorna una lista de objetos escalables escalados por un valor especificado.
@@ -24,7 +34,9 @@ public class StreamDemo {
      * @param value Valor numérico a escalar.
      * @return Lista con objetos escalados
      * */
-    public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value) {
-        return null;
+    public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value)
+    {
+        return scalables.stream.map(s -> s.scale(value)).collect(Collectors.toList());
     }
+
 }
