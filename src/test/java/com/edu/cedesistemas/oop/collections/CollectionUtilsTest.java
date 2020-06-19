@@ -14,6 +14,7 @@ import org.junit.Test;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.Set;
 
 public class CollectionUtilsTest {
@@ -30,9 +31,25 @@ public class CollectionUtilsTest {
         // Creando una lista de figuras ...
         Collection<Shape> shapes = Arrays.asList(s1, s2, s3, s4, s5, s6);
 
+        //System.out.println("s1 area: " + s1.area());
+        //System.out.println("s1 perimeter: " + s1.perimeter());
+        //System.out.println("s2 area: " + s2.area());
+        //System.out.println("s2 perimeter: " + s2.perimeter());
+        //System.out.println("s3 area: " + s3.area());
+        //System.out.println("s2 perimeter: " + s3.perimeter());
+        //System.out.println("s4 area: " + s4.area());
+        //System.out.println("s4 perimeter: " + s4.perimeter());
+        //System.out.println("s5 area: " + s5.area());
+        //System.out.println("s5 perimeter: " + s5.perimeter());
+        //System.out.println("s6 area: " + s6.area());
+        //System.out.println("s6 perimeter: " + s6.perimeter());
+
+        //System.out.println("Total Prueba: " + new HashSet<Shape>(shapes).size());
+
         // Removiendo duplicados: Una elipse es igual a otra siempre y cuando los valores de a y de b sean iguales
         Set<Shape> shapesResult = CollectionUtils.removeDuplicates(shapes);
-        System.out.println(shapesResult);
+
+        //System.out.println("Tamaño: " + shapesResult.size());
         // Verificando que se hayan eliminado las figuras repetidas sin importar el order
         assertThat(shapesResult, containsInAnyOrder(s1, s2, s3, s5)); // no importa el orden
 
