@@ -8,10 +8,7 @@ import java.util.Set;
 
 public class CollectionUtils {
     public static <E> Set<E> removeDuplicates(Collection<E> s) {
-        Set<E> a = new HashSet<E>(s);
-        System.out.println("Tamaño en el método: " + a.size());
-        return a;
-        //return new HashSet<E>(s);
+        return new HashSet<E>(s);
     }
 
     public static <E> Set<E> union(Collection<E> s1, Collection<E> s2) {
