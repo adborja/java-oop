@@ -24,7 +24,7 @@ import java.util.function.Function;
         }
 
         public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
-            return null;
+            return cars -> carsListToMap(cars);
         }
 
         private static Map<String, List<Car>> carsListToMap(List<Car> carsList) {
