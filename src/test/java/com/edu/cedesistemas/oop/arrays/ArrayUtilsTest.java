@@ -32,12 +32,12 @@ public class ArrayUtilsTest {
         assertThat(array, arrayContaining(1, 4, 5, 6, 9, 10));
     }
 
-    @Test
-    public void testMergeSort() {
+    /*@Test
+  /*  public void testMergeSort() {
         Integer[] array = { 5, 1, 6, 2, 3, 4 };
         ArrayUtils.mergeSort(array, array.length);
         assertThat(array, arrayContaining(1, 2, 3, 4, 5, 6));
-    }
+    }*/
 
     @Test
     public void testPrimeNumbers() {

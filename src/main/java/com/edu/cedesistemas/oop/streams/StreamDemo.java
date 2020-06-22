@@ -4,6 +4,7 @@ import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.geometry.Shape;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamDemo {
     /**
@@ -13,8 +14,9 @@ public class StreamDemo {
      * @param shapes Lista de figuras
      * @return Lista filtrada con las figuras que tienen un área menor o igual a la especificada.
      * */
-    public static List<? extends Shape> filterShapes(double areaLimit, List<? extends Shape> shapes) {
-        return null;
+    public static List<? extends Shape> filterShapes(double areaLimit, List<? extends Shape> shapes)
+    {
+        return shapes.stream().filter(s -> s.area() <= areaLimit).collect(Collectors.toList());
     }
 
     /**
@@ -25,6 +27,6 @@ public class StreamDemo {
      * @return Lista con objetos escalados
      * */
     public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value) {
-        return null;
+        return scalables.stream().map(s -> s.scale(value)).collect(Collectors.toList());
     }
 }
