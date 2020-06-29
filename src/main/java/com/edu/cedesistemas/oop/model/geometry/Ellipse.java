@@ -1,5 +1,7 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
+import java.util.Objects;
+
 public class Ellipse implements Shape {
     protected final double a;
     private final double b;
@@ -31,4 +33,19 @@ public class Ellipse implements Shape {
     public int compareTo(Object o) {
         return 0;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Ellipse ellipse = (Ellipse) o;
+        return Double.compare(ellipse.a, a) == 0 &&
+                Double.compare(ellipse.b, b) == 0;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(a, b);
+    }
+
 }

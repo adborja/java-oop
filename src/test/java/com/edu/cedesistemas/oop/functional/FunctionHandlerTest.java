@@ -63,7 +63,7 @@ public class FunctionHandlerTest {
         List<Circle> circles = Arrays.asList(c1, c2, c3, c4);
 
         Consumer<List<Circle>> sorter = l -> Collections.sort(l);
-        FunctionHandler.consume(sorter, circles);
+            FunctionHandler.consume(sorter, circles);
 
         assertThat(circles, contains(c3, c1, c4, c2));
     }

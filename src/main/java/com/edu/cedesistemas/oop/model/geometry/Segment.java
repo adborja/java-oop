@@ -40,6 +40,7 @@ public class Segment implements Shape{
         return 1;
     }
 
+
     @Override
     public int compareTo(Object o) {
         return 0;

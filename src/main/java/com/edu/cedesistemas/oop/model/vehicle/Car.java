@@ -4,10 +4,7 @@ import com.edu.cedesistemas.oop.model.geometry.Point;
 import com.edu.cedesistemas.oop.model.geometry.Segment;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.UUID;
+import java.util.*;
 
 public abstract class Car implements Vehicle, Comparable<Car> {
     protected String id;
@@ -114,5 +111,18 @@ public abstract class Car implements Vehicle, Comparable<Car> {
         Double t1 = this.traveledKms / this.speed;
         Double t2 = car.traveledKms / car.speed;
         return t1.compareTo(t2);
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Car car = (Car) o;
+        return Objects.equals(id, car.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
     }
 }

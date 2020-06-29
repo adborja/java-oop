@@ -61,14 +61,26 @@ public final class ArrayUtils {
 
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
-        // Implemente codigo
-        return 0;
+        Integer sum = 0;
+        for (Integer a: list)
+            sum = sum + a.intValue();
+        return sum;
     }
 
     // Lesson 2 -- ArrayList
     public static List<Integer> getPrimeNumbers(int limit) {
-        // Implemente codigo
-        return null;
+        List<Integer> numerosPrimos = new ArrayList<>();
+        for(int i=1;i <= limit;i++){
+            int count = 0;
+            for(int j=1;j <= i;j++){
+                if (i % j == 0)
+                    count ++;
+            }
+            if (count == 2)
+                numerosPrimos.add(i);
+
+        }
+        return numerosPrimos;
     }
 
     // Lesson 2 - arrays

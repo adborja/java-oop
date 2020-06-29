@@ -23,4 +23,5 @@ public class Circle extends Ellipse implements Scalable<Circle, Double>, Compara
     public String toString() {
         return "circle {radius: " + getRadius() + "}";
     }
+
 }
