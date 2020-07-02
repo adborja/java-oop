@@ -22,72 +22,23 @@ public class FunctionHandler {
     }
 
     public static Function<List<Car>, Map<String, List<Car>>> getCarMapper() {
+            return cars -> listarCars(cars);
+    }
+    private static Map<String, List<Car>> listarCars(List<Car> cars) {
+        Map<String, List<Car>> carsMap = new HashMap<>();
+        for (Car a : cars) {
+            carsMap.put(a.getName(), nombreCarros(cars, a.getName()));
+        }
+        return carsMap;
+    }
 
-
-        Function<List<Car>, Map<String, List<Car>>> mapaCarros = s -> {
-            Set<List> tipoCarros = new HashSet<>();
-            tipoCarros.add(s);
-            List<Car> carrosMazda = new ArrayList<>();
-            List<Car> carrosRenault = new ArrayList<>();
-            List<Car> carrosAudi = new ArrayList<>();
-            List<Car> carrosMercedes = new ArrayList<>();
-            List<Car> carrosFord = new ArrayList<>();
-
-            for(List<Car> a : tipoCarros){
-
-                if (a.getClass().getName() == "mazda")
-                    for(Car b : s){
-                        if (b.getName() == a.getClass().getName())
-                            carrosMazda.add(b);
-                    }
-
-                if (a.getClass().getName() == "renault")
-                    for(Car b : s){
-                        if (b.getName() == a.getClass().getName())
-                            carrosRenault.add(b);
-                    }
-
-                if (a.getClass().getName() == "audi")
-                    for(Car b : s){
-                        if (b.getName() == a.getClass().getName())
-                            carrosAudi.add(b);
-                    }
-
-                if (a.getClass().getName() == "mercedes")
-                    for(Car b : s){
-                        if (b.getName() == a.getClass().getName())
-                            carrosMercedes.add(b);
-                    }
-
-                if (a.getClass().getName() == "ford")
-                    for(Car b : s){
-                        if (b.getName() == a.getClass().getName())
-                            carrosFord.add(b);
-                    }
-
+    private static List<Car> nombreCarros(List<Car> originalCars, String name) {
+        List<Car> carrosPorNombre = new ArrayList<>();
+        for (Car a : originalCars) {
+            if (a.getName().equals(name)) {
+                carrosPorNombre.add(a);
             }
-
-            Map<String, List<Car>> mapa = new HashMap<>();
-            for(List<Car> a : tipoCarros){
-
-                if (a.getClass().getName() == "mazda")
-                    mapa.put(a.getClass().getName(),carrosMazda);
-
-                if (a.getClass().getName() == "renault")
-                    mapa.put(a.getClass().getName(),carrosRenault);
-
-                if (a.getClass().getName() == "audi")
-                    mapa.put(a.getClass().getName(),carrosAudi);
-
-                if (a.getClass().getName() == "mercedes")
-                    mapa.put(a.getClass().getName(),carrosMercedes);
-
-                if (a.getClass().getName() == "ford")
-                    mapa.put(a.getClass().getName(),carrosFord);
-            }
-            return mapa;
-        };
-
-        return mapaCarros;
+        }
+        return carrosPorNombre;
     }
 }
