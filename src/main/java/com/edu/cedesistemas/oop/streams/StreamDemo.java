@@ -4,13 +4,14 @@ import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.geometry.Shape;
 
 
-import com.edu.cedesistemas.oop.model.geometry.scalable;
+import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.geometry.Shape;
-import org.junit.Test;
+
 
 import java.util.Arrays;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class StreamDemo {
     /**
@@ -34,9 +35,10 @@ public class StreamDemo {
      * @param value Valor numérico a escalar.
      * @return Lista con objetos escalados
      * */
+
     public static <T extends Scalable<T, U>, U extends Number> List<T> scale(List<T> scalables, U value)
     {
-        return scalables.stream.map(s -> s.scale(value)).collect(Collectors.toList());
+        return scalables.stream().map(s -> s.scale(value)).collect(Collectors.toList());
     }
 
 }

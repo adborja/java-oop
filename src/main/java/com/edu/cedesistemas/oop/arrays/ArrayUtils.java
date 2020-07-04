@@ -2,23 +2,33 @@ package com.edu.cedesistemas.oop.arrays;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 
 public final class ArrayUtils {
     private ArrayUtils() {}
 
     // Lesson 2 - - arrays
     public static void bubbleSort(Integer[] array) {
+        boolean swapped = true;
+        Integer j = 0;
+        Integer tmp = 0;
         int n = array.length;
-        for (int i = 0; i < n - 1; i++) {
-            for (int j = 0; j < n - i - 1; j++) {
-                if (array[j] > array[j + 1]) {
-                    int temp = array[j];
-                    array[j] = array[j + 1];
-                    array[j + 1] = temp;
+
+        while (swapped == true) {
+            swapped = false;
+            j++;
+            for (int i = 0; i < n - 1; i++) {
+                    if (array[i] > array[i + 1]) {
+                        tmp = array[i];
+                        array[i] = array[i + 1];
+                        array[i + 1] = tmp;
+                        swapped = true;
+                    }
                 }
             }
         }
-    }
+
 
     public static void mergeSort(Integer[] array, int n) {
         if (n < 2) {
@@ -62,13 +72,56 @@ public final class ArrayUtils {
     // Lesson 2 -- ArrayList
     public static Integer sum(List<Integer> list) {
         // Implemente codigo
-        return 0;
+        Integer sum = 0;
+        int n = list.size();
+        for(int i=0;i<n;i++){
+            sum = sum + list.get(i);
+        }
+        return sum;
     }
+
+    /*
+    public static List<Integer> primeNumbersTill(int n) {
+
+        return IntStream.rangeClosed(2, n)
+
+                .filter(x -> isPrime(x)).boxed()
+
+                .collect(Collectors.toList());
+
+    }
+
+    private static boolean isPrime(int number) {
+
+        return IntStream.rangeClosed(2, (int) (Math.sqrt(number)))
+
+                .filter(n -> (n & 0X1) != 0)
+
+                .allMatch(n -> number % n != 0);
+
+    }
+*/
 
     // Lesson 2 -- ArrayList
     public static List<Integer> getPrimeNumbers(int limit) {
         // Implemente codigo
-        return null;
+        ArrayList<Integer> listaresultado = new ArrayList<>();
+        int i = 0;
+        int num = 0;
+        int count = 0;
+        for(i=1;i<=limit;i++){
+            count = 0;
+            for(num = i;num>=1;num--) {
+                if (i % num == 0) {
+                    count++;
+                }
+            }
+            if(count == 2){
+                listaresultado.add(i);
+            }
+        }
+
+        return listaresultado;
     }
 
     // Lesson 2 - arrays
