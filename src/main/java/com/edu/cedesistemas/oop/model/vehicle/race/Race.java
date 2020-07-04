@@ -29,11 +29,8 @@ public class Race<T> {
 
         T car = pitStop.getCar();
 
-        // Adding additional time to car ...
         double extraTime = new Random().nextDouble() * 0.5;
 
-
-        // Reasignar el tiempo del movimiento del carro
         Vehicle.Movement movemente = car.getMovements().get(0);
         movemente.setTime(movemente.getTime() + extraTime);
 
@@ -42,13 +39,7 @@ public class Race<T> {
 
     public void race() {
         System.out.println("running race with: " + cars.size() + " cars");
-        /*
-        Para cada carro:
-            crear un segment desde (0, 0) hasta (100, 100)
-            calcular el tiempo del segmento: t = x / v --> Formula de velocidad
-            crear un movimiento
-            agregar el movimiento al carro
-        * */
+
     }
 
     public T getWinner() {

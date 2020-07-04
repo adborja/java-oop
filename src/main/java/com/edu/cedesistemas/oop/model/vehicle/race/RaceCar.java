@@ -16,7 +16,6 @@ public class RaceCar extends FuelCar {
 
     public enum Team {
         FERRARI,
-        MCLAREN,
         RED_BULL,
         MERCEDES,
         RENAULT
