@@ -1,9 +1,8 @@
-package com.edu.cedesistemas.oop.tareas;
+package com.edu.cedesistemas.oop.tareascollections;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.atomic.AtomicInteger;
 
 public class TareaMapas {
 

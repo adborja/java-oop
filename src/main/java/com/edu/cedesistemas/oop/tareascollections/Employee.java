@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.tareas;
+package com.edu.cedesistemas.oop.tareascollections;
 
 import java.util.Objects;
 

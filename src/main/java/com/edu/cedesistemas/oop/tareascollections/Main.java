@@ -1,8 +1,4 @@
-package com.edu.cedesistemas.oop;
-
-import com.edu.cedesistemas.oop.tareascollections.Employee;
-import com.edu.cedesistemas.oop.tareascollections.ListCircles;
-import com.edu.cedesistemas.oop.tareascollections.TareaMapas;
+package com.edu.cedesistemas.oop.tareascollections;
 
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
@@ -11,7 +7,7 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Hello Java OOP, esto funciono!");
+        System.out.println("Tarea Collection!");
 
         ListCircles a = new ListCircles();
         a.listCircles();
@@ -34,6 +30,6 @@ public class Main {
         m.put("cuatro","four");
         m.put("cinco","five");
         TareaMapas e = new TareaMapas();
-        e.numerosEnteros(m,4);
+        e.numerosEnteros(m,5);
     }
 }

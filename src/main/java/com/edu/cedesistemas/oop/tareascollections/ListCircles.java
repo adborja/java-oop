@@ -1,4 +1,4 @@
-package com.edu.cedesistemas.oop.tareas;
+package com.edu.cedesistemas.oop.tareascollections;
 
 import com.edu.cedesistemas.oop.model.geometry.Circle;
 

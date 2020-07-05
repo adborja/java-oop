@@ -51,22 +51,22 @@ public class Race<T extends RaceCar> {
             crear un movimiento
             agregar el movimiento al carro
         * */
-        for (T car : cars) {
+        for (T a : cars) {
             Segment s = new Segment(Point.of(0, 0), Point.of(100, 100));
-            double time = s.getValue() / car.getSpeed();
+            double time = s.getValue() / a.getSpeed();
             Vehicle.Movement movement = new Vehicle.Movement(s, time);
-            car.getMovements().add(movement);
+            a.getMovements().add(movement);
         }
     }
 
     public T getWinner() {
         T winner = null;
         double minTime = 10;
-        for (T car : cars) {
-            Vehicle.Movement movement = car.getMovements().get(0);
+        for (T a : cars) {
+            Vehicle.Movement movement = a.getMovements().get(0);
             if (movement.getTime() < minTime) {
                 minTime = movement.getTime();
-                winner = car;
+                winner = a;
             }
         }
         return winner;

@@ -1,6 +1,5 @@
 package com.edu.cedesistemas.oop.functional;
 
-import com.edu.cedesistemas.oop.model.geometry.CircleRadiusComparator;
 import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.vehicle.Car;
 
@@ -32,9 +31,9 @@ public class FunctionHandler {
         return carsMap;
     }
 
-    private static List<Car> nombreCarros(List<Car> originalCars, String name) {
+    private static List<Car> nombreCarros(List<Car> cars, String name) {
         List<Car> carrosPorNombre = new ArrayList<>();
-        for (Car a : originalCars) {
+        for (Car a : cars) {
             if (a.getName().equals(name)) {
                 carrosPorNombre.add(a);
             }
