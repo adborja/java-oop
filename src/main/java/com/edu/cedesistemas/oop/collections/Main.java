@@ -26,5 +26,10 @@ public class Main {
         employeeMap.put(e6, e6.getName());
 
         System.out.println("Nuevo tamaño: " + employeeMap.size());
+
+
+
+        }
+
     }
-}
+

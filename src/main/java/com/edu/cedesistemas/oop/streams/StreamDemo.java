@@ -24,6 +24,7 @@ public class StreamDemo {
 
     public static List<? extends Shape> filterShapes(double areaLimit, List<? extends Shape> shapes) {
 
+
       return shapes.stream().filter(s -> s.area() <= areaLimit).collect(Collectors.toList());
     }
 
