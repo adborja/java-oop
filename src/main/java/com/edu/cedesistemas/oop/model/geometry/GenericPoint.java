@@ -1,57 +1,40 @@
 package com.edu.cedesistemas.oop.model.geometry;
 
+import javax.print.attribute.standard.NumberUp;
 import java.util.Objects;
 import java.util.Random;
 
-public class GenericPoint<X extends Number, Y extends Number> {
-    private final X x;
-    private final Y y;
+public class GenericPoint <T extends Number> {
+    private T x;
+    private T y;
 
-    public GenericPoint(X x, Y y) {
+    public GenericPoint(T x, T y) {
         this.x = x;
         this.y = y;
     }
 
-    public X getX() {
+    public T getX() {
         return x;
     }
 
-    public Y getY() {
+    public T getY() {
         return y;
     }
 
-    public static <T extends Number> double distance(GenericPoint<T, T> p1,
-                                                     GenericPoint<T, T> p2) {
-        return Math.sqrt(Math.pow(p1.getX().doubleValue() - p2.getX().doubleValue(), 2)
-                + Math.pow(p1.getY().doubleValue() - p2.getY().doubleValue(), 2));
+    public static <T extends Number> double distance(GenericPoint<T> object1, GenericPoint<T> object2) {
+        return Math.sqrt(Math.pow(object1.x.doubleValue() - object2.x.doubleValue(), 2) + Math.pow(object1.y.doubleValue() - object2.y.doubleValue(), 2));
     }
 
-    public static <X extends Number, Y extends Number> GenericPoint<X, Y> of(X x, Y y) {
-        return new GenericPoint<>(x, y);
+
+    public static <T extends Number> GenericPoint<T> of(T x, T y) {
+        GenericPoint<T> point = new GenericPoint<>(x, y);
+        return point;
     }
 
-    public static GenericPoint<Double, Double> random(int bound) {
-        Double x1 = new Random(bound).nextDouble();
-        Double y1 = new Random(bound).nextDouble();
+    /*
+    public static <T extends Number> GenericPoint<T> random(int bound) {
+        GenericPoint<T> point = new GenericPoint<T>();
         return of(x1, y1);
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        GenericPoint<?, ?> that = (GenericPoint<?, ?>) o;
-        return Objects.equals(x, that.x) &&
-                Objects.equals(y, that.y);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(x, y);
-    }
-
-    @Override
-    public String toString() {
-        return "(" + x + "," + y + ")";
-    }
+     */
 }

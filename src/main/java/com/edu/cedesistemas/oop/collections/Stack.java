@@ -50,5 +50,9 @@ public class Stack<E> implements Comparable<E> {
 
         System.out.println("pop: " + stack.pop());
         System.out.println("pop: " + stack.pop());
+
+        Stack<String> stack2 = new Stack<>(15);
+        stack2.push("hola");
+        stack2.push("mundo");
     }
 }
