@@ -31,10 +31,19 @@ public class GenericPoint <T extends Number> {
         return point;
     }
 
-    /*
-    public static <T extends Number> GenericPoint<T> random(int bound) {
-        GenericPoint<T> point = new GenericPoint<T>();
-        return of(x1, y1);
+
+    public static GenericPoint<Double> random(int bound) {
+        Double x1 = new Random().nextDouble() * bound;
+        Double x2 = new Random().nextDouble() * bound;
+        return of(x1,x2);
     }
-     */
+
+    @Override
+    public boolean equals(Object o){
+        if(this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GenericPoint<?> point = (GenericPoint<?>) o;
+        return point.x.equals(x) && point.y.equals(y);
+    }
+
 }
