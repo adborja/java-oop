@@ -1,11 +1,9 @@
 package com.edu.cedesistemas.oop.streams;
 
-import com.edu.cedesistemas.oop.functional.ShapeMultiplier;
 import com.edu.cedesistemas.oop.model.geometry.Scalable;
 import com.edu.cedesistemas.oop.model.geometry.Shape;
 
 import java.util.List;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 public class StreamDemo {
