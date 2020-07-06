@@ -2,7 +2,6 @@ package com.edu.cedesistemas.oop.model.vehicle.race;
 
 import com.edu.cedesistemas.oop.model.geometry.Point;
 import com.edu.cedesistemas.oop.model.geometry.Segment;
-import com.edu.cedesistemas.oop.model.vehicle.Car;
 import com.edu.cedesistemas.oop.model.vehicle.Vehicle;
 
 import java.util.ArrayList;
@@ -24,7 +23,7 @@ public class Race<T extends RaceCar> {
         T car = pitStop.getCar();
 
         // tanquear el carro
-        pitStop.tank(3);
+        pitStop.tank(9);
         // ajustar el carro
         pitStop.adjust();
         // cambiar llantas
@@ -65,6 +64,14 @@ public class Race<T extends RaceCar> {
     public T getWinner() {
         T winner = null;
         // Obtener el ganador
+        double timeMin = 10;
+        for (T car : cars){
+            Vehicle.Movement movement = car.getMovements().get(0);
+            if (movement.getTime() < timeMin){
+                timeMin = movement.getTime();
+                winner = car;
+            }
+        }
         return winner;
     }
 
