@@ -90,5 +90,6 @@ public class FunctionHandlerTest {
         assertThat(result.get("mazda"), contains(c1, c4, c6));
         assertThat(result.get("renault"), contains(c2, c7));
         assertThat(result.get("audi"), contains(c3));
+
     }
 }
