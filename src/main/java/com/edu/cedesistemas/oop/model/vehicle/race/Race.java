@@ -33,6 +33,8 @@ public class Race<T extends RaceCar> {
 
         // Adding additional time to car ...
         double extraTime = new Random().nextDouble() * 0.5;
+        double time = car.getMovements().get(0).getTime();
+        car.getMovements().get(0).setTime(time + extraTime);
 
         // Reasignar el tiempo del movimiento del carro
         Vehicle.Movement movemente = car.getMovements().get(0);
@@ -74,5 +76,4 @@ public class Race<T extends RaceCar> {
         }
         return winner;
     }
-
 }

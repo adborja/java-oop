@@ -5,13 +5,11 @@ import com.edu.cedesistemas.oop.model.geometry.Segment;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 import java.util.UUID;
 
-public abstract class Car implements Vehicle, Comparable<Car>{
+public abstract class Car implements Vehicle, Comparable<Car> {
     protected String id;
     protected double traveledKms;
     protected final String name;
