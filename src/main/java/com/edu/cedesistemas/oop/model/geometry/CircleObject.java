@@ -17,6 +17,5 @@ public class CircleObject {
         for (Circle circle: circles) {
             System.out.println("Area del Circulo: " +circle.area());
         }
-
     }
 }
